@@ -250,23 +250,40 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('admin-lte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('admin-lte/plugins/datatables/dataTables.rowReorder.min.js') }}"></script>
 <script src="{{ asset('admin-lte/plugins/datatables/dataTables.responsive.min.js') }}"></script>
-<script src="{{ asset('js/sweetalert.min.js') }}"></script>
+<script src="{{ asset('js/sweetalert2.js') }}"></script>
   <script>
     $('.btn-danger').on("click", function(e){
       e.preventDefault();
       var form = this.closest('form');
-      swal("Yakin?", "Anda akan menghapus data ini!", "warning", {
-        buttons: ["Batal", true]
+      Swal.fire({
+          title: 'Anda akan menghapus data ini!',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          cancelButtonText: 'No',
+          confirmButtonText: 'Yes'
       }).then((value)=>{
-        if(value) form.submit();
+          if(value.isConfirmed) {
+            form.submit()
+          }
       });
     });
     function logout(e){
       var form = $('#logout-form');
-      swal("Yakin?", "Anda akan keluar dari aplikasi ini!", "warning", {
-        buttons: ["Batal", true]
+      Swal.fire({
+          title: 'Yakin?',
+          text: 'Anda akan keluar dari aplikasi ini!',
+          icon: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#3085d6',
+          cancelButtonColor: '#d33',
+          cancelButtonText: 'No',
+          confirmButtonText: 'Yes'
       }).then((value)=>{
-        if(value) form.submit();
+          if(value.isConfirmed) {
+            form.submit()
+          }
       });
     }
   </script>
