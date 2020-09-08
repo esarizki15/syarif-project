@@ -16,9 +16,9 @@ jobs:
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
-      run: |
-      composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
-      npm install && npm run dev
+      run: composer install -q --no-ansi --no-interaction --no-scripts --no-progress --prefer-dist
+    - name: NPM Dependencies
+      run: npm install && npm run prod
     - name: Generate key
       run: php artisan key:generate
     - name: Directory Permissions
