@@ -234,7 +234,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       Anything you want
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights reserved.
+    <strong><a href="#" onclick="window.open('https://github.com/esarizki15')">Click here!</a></strong>
   </footer>
 </div>
 <!-- ./wrapper -->
