@@ -231,7 +231,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <footer class="main-footer">
     <!-- To the right -->
     <div class="float-right d-none d-sm-inline">
-      Anything you want
+      Anything you want 
     </div>
     <!-- Default to the left -->
     <strong><a href="#" onclick="window.open('https://github.com/esarizki15')">Click here!</a></strong>
