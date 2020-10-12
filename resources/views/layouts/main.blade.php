@@ -167,6 +167,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   </p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="{{ route('role.index') }}" class="nav-link {{ (request()->is('role*')) ? 'active' : '' }}">
+                  <i class="nav-icon fa fa-briefcase"></i>
+                  <p>Role</p>
+                </a>
+              </li>
             @endif
           @endguest
         </ul>
