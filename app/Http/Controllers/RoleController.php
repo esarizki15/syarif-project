@@ -35,9 +35,19 @@ class RoleController extends Controller
      */
     public function store(Request $request)
     {
-	$role = Role::create($request->all());
+        $request->validate([
+            'name' => 'required|max:10'
+        ]);
+        $status = 'Role stored!';
+        $success = true;
+        try{
+            $role = Role::create($request->all());
+        }catch(\RuntimeException $e){
+            $status = $e->getMessage();
+            $success = false;
+        }
 
-	return redirect()->route('role.index')->with('status', 'Role stored!')->with('success', true);
+        return redirect()->route('role.index')->with('status', $status)->with('success', $success);
     }
 
     /**
@@ -59,8 +69,8 @@ class RoleController extends Controller
      */
     public function edit($id)
     {
-	$role = Role::find($id);
-	return view('role.edit', compact('role'));
+        $role = Role::find($id);
+        return view('role.edit', compact('role'));
     }
 
     /**
@@ -72,9 +82,19 @@ class RoleController extends Controller
      */
     public function update(Request $request, $id)
     {
-	$role = Role::find($id);
-	$role->update($request->all());
-	return redirect()->route('role.index')->with('status', 'Role updated!')->with('success', true);
+        $request->validate([
+            'name' => 'required|max:10'
+            ]);
+        $role = Role::find($id);
+        $status = 'Role updated!';
+        $success = true;
+        try{
+            $role->update($request->all());
+        }catch(\RuntimeException $e){
+            $status = $e->getMessage();
+            $success = false;
+        }
+        return redirect()->route('role.index')->with('status', $status)->with('success', $success);
     }
 
     /**
@@ -85,9 +105,15 @@ class RoleController extends Controller
      */
     public function destroy($id)
     {
-    	$role = Role::find($id);
-	$role->delete();
-	return redirect()->route('role.index')->with('status', 'Role deleted!')->with('success', true);
-
+        $role = Role::find($id);
+        $status = 'Role deleted!';
+        $success = true;
+        try {
+            $role->delete();
+        }catch(\RuntimeException $e){
+            $status = $e->getMessage();
+            $success = false;
+        }
+        return redirect()->route('role.index')->with('status', $status)->with('success', $success);
     }
 }
