@@ -1,0 +1,8 @@
+INFO  2020-10-12T09:20:17.296 12190 channel_create_event:204: new channel 3 (function coc#rpc#start_server[17]..<SNR>20_start:45) : {"id": 3, "client": {}, "mode": "rpc", "stream": "job"}
+INFO  2020-10-12T09:20:17.443 12190 main:554: starting main loop
+INFO  2020-10-12T09:44:39.824 12190 emsg_multiline:681: E486: Pattern not found: store
+INFO  2020-10-12T09:45:18.498 12190 emsg_multiline:681: E389: Couldn't find pattern
+INFO  2020-10-12T09:46:12.033 12190 emsg_multiline:681: E486: Pattern not found: Save
+INFO  2020-10-12T10:13:16.679 12190 os_proc_tree_kill:96: sending SIGTERM to PID -12192
+INFO  2020-10-12T10:13:16.697 12190 on_process_exit:393: exited: pid=12192 status=143 stoptime=3755192795952
+INFO  2020-10-12T10:13:16.697 12190 os_exit:581: Nvim exit: 0

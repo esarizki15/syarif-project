@@ -1,4 +1,4 @@
-@extends('layouts.main')
+@extends('layouts.admin-lte.main')
 @section('title')
     
 @endsection
