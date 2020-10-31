@@ -28,7 +28,8 @@
                             <tr>
                                 <td>{{ $role->name }}</td>
                                 <td>
-                                    @include('partial.action', ['data' => $role, 'route'=>'role'])
+                                    <x-action route="role" :object="$role"></x-action>
+                                    {{-- @include('partial.action', ['data' => $role, 'route'=>'role']) --}}
                                 </td>
                             </tr>
                         @endforeach

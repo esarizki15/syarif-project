@@ -6,6 +6,6 @@
     {{ method_field('DELETE') }}
     
     <a href="{{ route($route.'.edit', $data->id) }}" class="btn btn-xs btn-primary">Edit</a>
-    <button class="btn btn-xs btn-danger">Hapus</button>
+    <button class="btn btn-xs btn-delete btn-danger">Hapus</button>
 </form>
 @endif

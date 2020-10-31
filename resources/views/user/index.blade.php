@@ -1,4 +1,5 @@
 @extends('layouts.admin-lte.main')
+
 @section('title')
     
 @endsection
@@ -43,7 +44,5 @@
       </div>
     </div>
 </div>
-@endsection
-@section('script')
 @include('partial.dataTable')
 @endsection

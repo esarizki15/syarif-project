@@ -17,9 +17,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="{{ asset('admin-lte/plugins/icheck-bootstrap/icheck-bootstrap.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin-lte/dist/css/adminlte.css') }}">
-  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
-  <link rel="stylesheet" href="{{ asset('admin-lte/plugins/datatables/responsive.dataTables.min.css') }}">
-  <link rel="stylesheet" href="{{ asset('admin-lte/plugins/datatables/rowReorder.dataTables.min.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <style>
@@ -253,12 +250,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('admin-lte/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
 <script src="{{ asset('admin-lte/dist/js/adminlte.min.js') }}"></script>
-<script src="{{ asset('admin-lte/plugins/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('admin-lte/plugins/datatables/dataTables.rowReorder.min.js') }}"></script>
-<script src="{{ asset('admin-lte/plugins/datatables/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('js/sweetalert2.js') }}"></script>
   <script>
-    $('.btn-danger').on("click", function(e){
+    $('.btn-delete').on("click", function(e){
       e.preventDefault();
       var form = this.closest('form');
       Swal.fire({
