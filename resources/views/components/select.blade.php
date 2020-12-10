@@ -2,7 +2,7 @@
     <label for="{{ $globalAttribute }}" class="col-md-4 col-form-label text-md-right">{{ __($label) }}</label>
     
     <div class="col-md-6">
-        <select id="{{ $globalAttribute }}" class="form-control @error($globalAttribute) is-invalid @enderror" name="{{ $globalAttribute }}" {{ $customAttribute }} autocomplete="{{ $globalAttribute }}" autofocus>
+        <select id="{{ $globalAttribute }}" class="select-2 form-control @error($globalAttribute) is-invalid @enderror" name="{{ $globalAttribute }}" {{ $customAttribute }} autocomplete="{{ $globalAttribute }}" autofocus>
             {{ $slot }}
         </select>
         @error($globalAttribute)

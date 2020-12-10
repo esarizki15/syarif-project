@@ -23,7 +23,7 @@
                 <form method="POST" action="{{ route('user.store') }}">
                     @csrf
 
-                    <x-input globalAttribute="name" label="Name" :defaultValue="old('name')" customAttribute="required" />
+                    <x-input globalAttribute="name" :defaultValue="old('name')" customAttribute="required" />
                     
                     <x-input globalAttribute="email" type="email" label="E-Mail Address" :defaultValue="old('email')" customAttribute="required" />
                     

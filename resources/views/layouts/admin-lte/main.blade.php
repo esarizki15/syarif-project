@@ -20,12 +20,23 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
   <link rel="stylesheet" href="{{ asset('admin-lte/plugins/datatables/responsive.dataTables.min.css') }}">
   <link rel="stylesheet" href="{{ asset('admin-lte/plugins/datatables/rowReorder.dataTables.min.css') }}">
+  <link rel="stylesheet" href="{{ asset('admin-lte/plugins/select2/css/select2.css') }}">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <style>
     .header-primary{
       background-color: blue;
       color: white;
+    }
+    .select2-container .select2-selection--single {
+      height: auto;
+      border:1px solid #ced4da;
+    }
+    .select2-container--default.select2-container--focus .select2-selection--single{
+      border:1px solid #ced4da;
+    }
+    .select2-container--default .select2-container--below .select2-container--focus{
+      border:1px solid #ced4da;
     }
   </style>
   @yield('style')
@@ -95,7 +106,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <script src="{{ asset('admin-lte/plugins/datatables/dataTables.rowReorder.min.js') }}"></script>
 <script src="{{ asset('admin-lte/plugins/datatables/dataTables.responsive.min.js') }}"></script>
 <script src="{{ asset('js/sweetalert2.js') }}"></script>
+<script src="{{ asset('admin-lte/plugins/select2/js/select2.full.js') }}"></script>
   <script>
+    $(document).ready(function() {
+        $('.select-2').select2();
+    });
     $('.btn-danger').on("click", function(e){
       e.preventDefault();
       var form = this.closest('form');

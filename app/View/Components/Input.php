@@ -16,7 +16,7 @@ class Input extends Component
      *
      * @return void
      */
-    public function __construct($globalAttribute, $label, $type="text", $defaultValue, $customAttribute="")
+    public function __construct($globalAttribute, $label=false, $type="text", $defaultValue, $customAttribute="")
     {
         $this->globalAttribute = $globalAttribute;
         $this->label = $label;

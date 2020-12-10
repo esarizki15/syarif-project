@@ -1,5 +1,5 @@
 <div class="form-group row">
-    <label for="{{ $globalAttribute }}" class="col-md-4 col-form-label text-md-right">{{ __($label) }}</label>
+    <label for="{{ $globalAttribute }}" class="col-md-4 col-form-label text-md-right">{{ __($label ? $label : ucwords($globalAttribute)) }}</label>
 
     <div class="col-md-6">
         <input id="{{ $globalAttribute }}" type="{{ $type }}" class="form-control @error($globalAttribute) is-invalid @enderror" name="{{ $globalAttribute }}" value="{{ $defaultValue }}" {{ $customAttribute }} autocomplete="{{ $globalAttribute }}" autofocus>
