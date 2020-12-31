@@ -4,7 +4,7 @@
 @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-<li class="breadcrumb-item"><a href="{{ route('kelas.index') }}">Kelas</a></li>
+<li class="breadcrumb-item"><a href="{{ route('pengumuman.index') }}">Pengumuman</a></li>
 <li class="breadcrumb-item active">Create</li>
 @endsection
 @section('content')
@@ -12,7 +12,7 @@
     <div class="row justify-content-center">
       <div class="col-md-8">
         <div class="card">
-            <div class="card-header">Kelas</div>
+            <div class="card-header">Pengumuman</div>
 
             <div class="card-body">
                 @if (session('status'))
@@ -20,10 +20,11 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <form method="POST" action="{{ route('kelas.update', $kela->id) }}">
+                <form method="POST" action="{{ route('pengumuman.update', $pengumuman->id) }}">
                     @method('PUT')
                     @csrf
-                    <x-input globalAttribute="name" :defaultValue="$kela->name" customAttribute="required" />
+                    <x-input globalAttribute="judul" :defaultValue="$pengumuman->judul" customAttribute="required" />
+                    <x-text-area globalAttribute="isi" :defaultValue="$pengumuman->isi" />
                     
                     <x-submit-button />
                 </form>

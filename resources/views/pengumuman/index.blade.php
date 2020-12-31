@@ -29,7 +29,7 @@
                         @foreach ($pengumuman as $data)
                             <tr>
                                 <td>{{ ucwords($data->judul) }}</td>
-                                <td>{{ ucwords($data->isi) }}</td>
+                                <td>{!! $data->isi !!}</td>
                                 <td>
                                     @include('partial.action', ['data' => $data, 'route'=>'pengumuman'])
                                 </td>

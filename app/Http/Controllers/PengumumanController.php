@@ -69,7 +69,7 @@ class PengumumanController extends Controller
      */
     public function edit(Pengumuman $pengumuman)
     {
-        return view('pengumuman.edit', compact('kela'));
+        return view('pengumuman.edit', compact('pengumuman'));
     }
 
     /**

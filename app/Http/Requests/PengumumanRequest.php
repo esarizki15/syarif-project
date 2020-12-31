@@ -24,8 +24,8 @@ class PengumumanRequest extends FormRequest
     public function rules()
     {
         return [
-            'judul' => 'requeired',
-            'isi' => 'requeired',
+            'judul' => 'required',
+            // 'isi' => 'required',
         ];
     }
 }
