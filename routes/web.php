@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('login');
 });
 
 Auth::routes();
@@ -22,4 +22,5 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('profile', 'ProfileController')->middleware('auth');
 Route::resource('user', 'UserController')->middleware('auth');
+Route::resource('pengumuman', 'PengumumanController')->middleware('auth');
 Route::resource('role', 'RoleController')->middleware('auth');

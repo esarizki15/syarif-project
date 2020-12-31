@@ -53,6 +53,14 @@
             </li>
             @if (Auth::user()->role->id == 1)
               <li class="nav-item">
+                <a href="{{ route('pengumuman.index') }}" class="nav-link {{ (request()->is('pengumuman*')) ? 'active' : '' }}">
+                  <i class="nav-icon fas fa-user"></i>
+                  <p>
+                    Pengumuman
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
                 <a href="{{ route('user.index') }}" class="nav-link {{ (request()->is('user*')) ? 'active' : '' }}">
                   <i class="nav-icon fas fa-user"></i>
                   <p>
