@@ -25,6 +25,7 @@ class PengumumanRequest extends FormRequest
     {
         return [
             'judul' => 'required',
+            'tanggal' => 'required',
             // 'isi' => 'required',
         ];
     }

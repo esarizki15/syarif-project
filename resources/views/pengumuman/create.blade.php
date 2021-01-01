@@ -23,7 +23,10 @@
                 <form method="POST" action="{{ route('pengumuman.store') }}">
                     @csrf
                     <x-input globalAttribute="judul" :defaultValue="old('judul')" customAttribute="required" />
+                    
                     <x-text-area globalAttribute="isi" :defaultValue="old('isi')" />
+                    
+                    <x-input type="date" globalAttribute="tanggal" label="Aktif Sampai" :defaultValue="old('tanggal')" customAttribute="required" />
                     
                     <x-submit-button />
                 </form>

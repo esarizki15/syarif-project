@@ -17,6 +17,7 @@ class CreatePengumumenTable extends Migration
             $table->id();
             $table->string('judul')->nullable();
             $table->text('isi');
+            $table->date('tanggal');
             $table->timestamps();
         });
     }

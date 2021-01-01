@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Pengumuman;
 class HomeController extends Controller
 {
     /**
@@ -23,6 +23,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $now = \Carbon\Carbon::now();
+        $pengumuman = Pengumuman::where('tanggal', '>=', $now->toDateString())->get();
+        return view('home', compact('pengumuman'));
     }
 }

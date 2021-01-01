@@ -22,6 +22,7 @@
                         <tr>
                             <th scope="col">Judul</th>
                             <th scope="col">Isi</th>
+                            <th scope="col">Aktif Sampai</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -30,6 +31,7 @@
                             <tr>
                                 <td>{{ ucwords($data->judul) }}</td>
                                 <td>{!! $data->isi !!}</td>
+                                <td>{{ $data->tanggal }}</td>
                                 <td>
                                     @include('partial.action', ['data' => $data, 'route'=>'pengumuman'])
                                 </td>
