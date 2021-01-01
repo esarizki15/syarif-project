@@ -54,25 +54,36 @@
             @if (Auth::user()->role->id == 1)
               <li class="nav-item">
                 <a href="{{ route('pengumuman.index') }}" class="nav-link {{ (request()->is('pengumuman*')) ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-user"></i>
+                  <i class="nav-icon fa fa-briefcase"></i>
                   <p>
                     Pengumuman
                   </p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="{{ route('user.index') }}" class="nav-link {{ (request()->is('user*')) ? 'active' : '' }}">
-                  <i class="nav-icon fas fa-user"></i>
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
                   <p>
-                    User
+                    Master
+                    <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
-              </li>
-              <li class="nav-item">
-                <a href="{{ route('role.index') }}" class="nav-link {{ (request()->is('role*')) ? 'active' : '' }}">
-                  <i class="nav-icon fa fa-briefcase"></i>
-                  <p>Role</p>
-                </a>
+                <ul class="nav nav-treeview" style="display: none;">
+                  <li class="nav-item">
+                    <a href="{{ route('user.index') }}" class="nav-link {{ (request()->is('user*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        User
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('role.index') }}" class="nav-link {{ (request()->is('role*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Role</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
             @endif
           @endguest
