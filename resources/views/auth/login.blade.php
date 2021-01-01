@@ -2,8 +2,8 @@
 @section('content')
 <div class="login-box">
   <div class="login-logo">
-    {{-- <a href="/"><img src="{{ asset('img/ahass.png') }}" style="max-width: -webkit-fill-available;"></a> --}}
-    <a href="/"><b>AdminLTE</b></a>
+    <a href="/"><img src="{{ asset('img/logo_3.png') }}" style="max-width: -webkit-fill-available;"></a>
+    {{-- <a href="/"><b>AdminLTE</b></a> --}}
   </div>
   <!-- /.login-logo -->
   <div class="card">
