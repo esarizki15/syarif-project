@@ -78,6 +78,14 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a href="{{ route('guru.index') }}" class="nav-link {{ (request()->is('guru*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Guru
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a href="{{ route('kelas.index') }}" class="nav-link {{ (request()->is('kelas*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>
