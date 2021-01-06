@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use App\Role;
 use App\User;
 use App\Mapel;
+use App\Ekskul;
 class UserSeeder extends Seeder
 {
     /**
@@ -13,6 +14,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $ekskul = new Ekskul();
+        $ekskul->name = "Palang Merah Remaja";
+        $ekskul->nama_singkat = "PMR";
+        $ekskul->save();
+
         $mapel = new Mapel();
         $mapel->kode = "001";
         $mapel->name = "IPA";

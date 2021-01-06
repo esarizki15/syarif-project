@@ -78,6 +78,14 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a href="{{ route('ekskul.index') }}" class="nav-link {{ (request()->is('ekskul*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Ekstrakurikuler
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a href="{{ route('user.index') }}" class="nav-link {{ (request()->is('user*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>
