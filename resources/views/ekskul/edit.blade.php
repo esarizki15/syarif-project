@@ -27,7 +27,7 @@
                     
                     <x-input globalAttribute="nama_singkat" label="Nama Singkat" :defaultValue="$ekskul->nama_singkat" customAttribute="required" />
                     
-                    <x-submit-button />
+                    <x-submit-button label="Update" />
                 </form>
             </div>
         </div>

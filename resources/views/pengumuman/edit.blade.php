@@ -28,7 +28,7 @@
                     <x-text-area globalAttribute="isi" :defaultValue="$pengumuman->isi" />
                             
                     <x-input type="date" globalAttribute="tanggal" label="Aktif Sampai" :defaultValue="$pengumuman->tanggal" customAttribute="required" />
-                    <x-submit-button />
+                    <x-submit-button label="Update" />
                 </form>
             </div>
         </div>

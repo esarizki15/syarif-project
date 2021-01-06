@@ -5,6 +5,7 @@ use App\Role;
 use App\User;
 use App\Mapel;
 use App\Ekskul;
+use App\Kelas;
 class UserSeeder extends Seeder
 {
     /**
@@ -22,6 +23,11 @@ class UserSeeder extends Seeder
         $mapel = new Mapel();
         $mapel->kode = "001";
         $mapel->name = "IPA";
+        $mapel->save();
+        
+        $mapel = new Kelas();
+        $mapel->kode = "001";
+        $mapel->name = "X IPA";
         $mapel->save();
         
         $role = new Role();

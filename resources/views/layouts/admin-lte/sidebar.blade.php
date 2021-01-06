@@ -70,6 +70,14 @@
                 </a>
                 <ul class="nav nav-treeview" style="display: none;">
                   <li class="nav-item">
+                    <a href="{{ route('kelas.index') }}" class="nav-link {{ (request()->is('kelas*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Kelas
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a href="{{ route('mapel.index') }}" class="nav-link {{ (request()->is('mapel*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>
