@@ -28,5 +28,6 @@ Route::resource('ekskul', 'EkskulController')->middleware('auth');
 Route::resource('kelas', 'KelasController')->middleware('auth');
 Route::resource('siswa', 'SiswaController')->middleware('auth');
 Route::resource('guru', 'GuruController')->middleware('auth');
+Route::resource('jadwal', 'JadwalController')->middleware('auth');
 Route::resource('wali-kelas', 'WaliKelasController')->middleware('auth');
 Route::resource('role', 'RoleController')->middleware('auth');

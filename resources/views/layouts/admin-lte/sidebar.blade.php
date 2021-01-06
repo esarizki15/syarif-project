@@ -102,6 +102,14 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a href="{{ route('jadwal.index') }}" class="nav-link {{ (request()->is('jadwal*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Jadwal
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a href="{{ route('mapel.index') }}" class="nav-link {{ (request()->is('mapel*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>
