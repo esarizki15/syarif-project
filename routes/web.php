@@ -26,4 +26,5 @@ Route::resource('pengumuman', 'PengumumanController')->middleware('auth');
 Route::resource('mapel', 'MapelController')->middleware('auth');
 Route::resource('ekskul', 'EkskulController')->middleware('auth');
 Route::resource('kelas', 'KelasController')->middleware('auth');
+Route::resource('siswa', 'SiswaController')->middleware('auth');
 Route::resource('role', 'RoleController')->middleware('auth');

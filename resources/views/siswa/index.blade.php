@@ -5,7 +5,7 @@
 @endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-<li class="breadcrumb-item active">Mapel</li>
+<li class="breadcrumb-item active">Siswa</li>
 @endsection
 @section('content')
 <div class="container-fluid">
@@ -13,25 +13,31 @@
       <div class="col-md-12">
         @include('partial.alert')
         <div class="card">
-            <div class="card-header header-primary">Mapel</div>
+            <div class="card-header header-primary">Siswa</div>
 
             <div class="card-body">
-                <p><a href="{{ route('mapel.create') }}" class="btn btn-sm btn-primary">Buat</a></p>
+                <p><a href="{{ route('siswa.create') }}" class="btn btn-sm btn-primary">Buat</a></p>
                 <table class="table table-hover display nowrap" style="width:100%">
                     <thead>
                         <tr>
-                            <th scope="col">Kode</th>
+                            <th scope="col">NIS</th>
                             <th scope="col">Nama</th>
+                            <th scope="col">Jenis Kelamin</th>
+                            <th scope="col">Kelas</th>
+                            <th scope="col">Email</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach ($mapel as $data)
+                        @foreach ($siswa as $data)
                             <tr>
-                                <td>{{ ucwords($data->kode) }}</td>
-                                <td>{{ ucwords($data->name) }}</td>
+                                <td>{{ strtoupper($data->nis) }}</td>
+                                <td>{{ strtoupper($data->nama) }}</td>
+                                <td>{{ strtoupper($data->jenis_kelamin) }}</td>
+                                <td>{{ strtoupper($data->kelas->name) }}</td>
+                                <td>{{ $data->email }}</td>
                                 <td>
-                                    @include('partial.action', ['data' => $data, 'route'=>'mapel'])
+                                    @include('partial.action', ['data' => $data, 'route'=>'siswa'])
                                 </td>
                             </tr>
                         @endforeach
