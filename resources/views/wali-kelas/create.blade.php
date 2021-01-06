@@ -31,6 +31,13 @@
                             <x-input globalAttribute="ttl" label="Tempat Tanggal Lahir" :defaultValue="old('ttl')" customAttribute="required" isStack="{{ true }}" />
                             
                             <x-input globalAttribute="ttd" type="file" label="Tanda Tangan" :defaultValue="old('ttd')" customAttribute="required" isStack="{{ true }}" />
+
+                            <div class="form-group row">
+                                <div class="col">
+                                    <img src="#" id="blah" onerror="this.style.display='none'" alt="Your Image" style="max-width: -webkit-fill-available;
+                                    max-height: 200px;">
+                                </div>
+                            </div>
                         </div>
                         <div class="col col-md-6 px-3">
                             <x-select globalAttribute="jenis_kelamin" :isStack="true" label="Jenis Kelamin" customAttribute="required">
@@ -65,4 +72,24 @@
       </div>
     </div>
 </div>
+@endsection
+@section('script')
+<script>
+    function readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+            $('#blah').attr('src', e.target.result);
+            $('#blah').show();
+            }
+            
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        }
+    }
+
+$("#ttd").change(function() {
+  readURL(this);
+});
+</script>
 @endsection
