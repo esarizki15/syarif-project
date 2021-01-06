@@ -86,6 +86,14 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a href="{{ route('wali-kelas.index') }}" class="nav-link {{ (request()->is('wali-kelas*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Wali Kelas
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a href="{{ route('kelas.index') }}" class="nav-link {{ (request()->is('kelas*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>

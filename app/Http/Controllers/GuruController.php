@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Guru;
 use App\Mapel;
-use Illuminate\Http\Request;;
+use Illuminate\Http\Request;
 use App\Http\Requests\GuruRequest;
 use Throwable;
 
