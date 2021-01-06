@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Role;
 use App\User;
+use App\Mapel;
 class UserSeeder extends Seeder
 {
     /**
@@ -12,6 +13,11 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $mapel = new Mapel();
+        $mapel->kode = "001";
+        $mapel->name = "IPA";
+        $mapel->save();
+        
         $role = new Role();
         $role->name = "Admin";
         $role->save();
