@@ -23,7 +23,7 @@
                             <th scope="col">NIP</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Jenis Kelamin</th>
-                            <th scope="col">Mata Pelajaran</th>
+                            <th scope="col">Kelas</th>
                             <th scope="col">Email</th>
                             <th scope="col">Aksi</th>
                         </tr>
