@@ -30,8 +30,10 @@
                             
                             <x-input globalAttribute="nama" :defaultValue="$waliKelas->nama" customAttribute="required" label="Nama Wali Kelas" isStack="{{ true }}" />
                             
-                            <x-input globalAttribute="ttl" label="Tempat Tanggal Lahir" :defaultValue="$waliKelas->ttl" customAttribute="required" isStack="{{ true }}" />
-                            
+                            <x-input globalAttribute="tempat_lahir" label="Tempat Lahir" :defaultValue="$waliKelas->tempat_lahir" customAttribute="required" isStack="{{ true }}" />
+                        
+                            <x-input type="date" globalAttribute="tanggal_lahir" label="Tanggal Lahir" :defaultValue="$waliKelas->tanggal_lahir" customAttribute="required" isStack="{{ true }}" />
+
                             <x-input globalAttribute="ttd" type="file" label="Tanda Tangan" :defaultValue="$waliKelas->ttd" isStack="{{ true }}" />
 
                             <div class="form-group row">

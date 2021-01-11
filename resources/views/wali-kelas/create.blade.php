@@ -28,7 +28,9 @@
                             
                             <x-input globalAttribute="nama" :defaultValue="old('nama')" customAttribute="required" label="Nama Wali Kelas" isStack="{{ true }}" />
                             
-                            <x-input globalAttribute="ttl" label="Tempat Tanggal Lahir" :defaultValue="old('ttl')" customAttribute="required" isStack="{{ true }}" />
+                            <x-input globalAttribute="tempat_lahir" label="Tempat Lahir" :defaultValue="old('tempat_lahir')" customAttribute="required" isStack="{{ true }}" />
+                            
+                            <x-input type="date" globalAttribute="tanggal_lahir" label="Tanggal Lahir" :defaultValue="old('tanggal_lahir')" customAttribute="required" isStack="{{ true }}" />
                             
                             <x-input globalAttribute="ttd" type="file" label="Tanda Tangan" :defaultValue="old('ttd')" customAttribute="required" isStack="{{ true }}" />
 

@@ -20,7 +20,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <form method="POST" action="{{ route('guru.update', $guru->id) }}">
+                <form method="POST" action="{{ route('guru.update', $guru->id) }}"  enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="row">
@@ -29,7 +29,9 @@
                             
                             <x-input globalAttribute="nama" :defaultValue="$guru->nama" customAttribute="required" label="Nama guru" isStack="{{ true }}" />
                             
-                            <x-input globalAttribute="ttl" label="Tempat Tanggal Lahir" :defaultValue="$guru->ttl" customAttribute="required" isStack="{{ true }}" />
+                            <x-input globalAttribute="tempat_lahir" label="Tempat Lahir" :defaultValue="$guru->tempat_lahir" customAttribute="required" isStack="{{ true }}" />
+                        
+                            <x-input type="date" globalAttribute="tanggal_lahir" label="Tanggal Lahir" :defaultValue="$guru->tanggal_lahir" customAttribute="required" isStack="{{ true }}" />
                             
                             <x-input globalAttribute="email" type="email" :defaultValue="$guru->email" customAttribute="required" isStack="{{ true }}" />
                         </div>
@@ -48,6 +50,15 @@
                             <x-input globalAttribute="hp" :defaultValue="$guru->hp" customAttribute="required" label="No. Handphone" isStack="{{ true }}" />
 
                             <x-input globalAttribute="jenjang_pendidikan" :defaultValue="$guru->jenjang_pendidikan" customAttribute="required" label="Jenjang Pendidikan" isStack="{{ true }}" />
+
+                            <x-input type="file" globalAttribute="foto" :defaultValue="$guru->foto" customAttribute="required" label="Foto" isStack="{{ true }}" />
+
+                            <div class="form-group row">
+                                <div class="col">
+                                    <img src="{{ asset('img/' . $guru->foto) }}" alt="none" style="max-width: -webkit-fill-available;
+                                    max-height: 200px;">
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col" style="text-align: right;">

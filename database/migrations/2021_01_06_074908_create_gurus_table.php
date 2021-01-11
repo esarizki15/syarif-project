@@ -17,12 +17,14 @@ class CreateGurusTable extends Migration
             $table->id();
             $table->string('nip')->nullable();
             $table->string('nama')->nullable();
-            $table->string('ttl')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->string('tanggal_lahir')->nullable();
             $table->string('email')->nullable();
             $table->string('jenis_kelamin')->nullable();
             $table->foreignId('mapel_id')->nullable();
             $table->string('hp')->nullable();
             $table->string('jenjang_pendidikan')->nullable();
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

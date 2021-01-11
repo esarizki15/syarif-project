@@ -9,7 +9,8 @@ class WaliKelas extends Model
     protected $fillable = [
         'nip',
         'nama',
-        'ttl',
+        'tempat_lahir',
+        'tanggal_lahir',
         'ttd',
         'jenis_kelamin',
         'kelas_id',

@@ -20,7 +20,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <form method="POST" action="{{ route('guru.store') }}">
+                <form method="POST" action="{{ route('guru.store') }}" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col col-md-6 px-3">
@@ -28,7 +28,9 @@
                             
                             <x-input globalAttribute="nama" :defaultValue="old('nama')" customAttribute="required" label="Nama Guru" isStack="{{ true }}" />
                             
-                            <x-input globalAttribute="ttl" label="Tempat Tanggal Lahir" :defaultValue="old('ttl')" customAttribute="required" isStack="{{ true }}" />
+                            <x-input globalAttribute="tempat_lahir" label="Tempat Lahir" :defaultValue="old('tempat_lahir')" customAttribute="required" isStack="{{ true }}" />
+                            
+                            <x-input type="date" globalAttribute="tanggal_lahir" label="Tanggal Lahir" :defaultValue="old('tanggal_lahir')" customAttribute="required" isStack="{{ true }}" />
                             
                             <x-input globalAttribute="email" type="email" :defaultValue="old('email')" customAttribute="required" isStack="{{ true }}" />
                         </div>
@@ -47,6 +49,8 @@
                             <x-input globalAttribute="hp" :defaultValue="old('hp')" customAttribute="required" label="No. Handphone" isStack="{{ true }}" />
 
                             <x-input globalAttribute="jenjang_pendidikan" :defaultValue="old('jenjang_pendidikan')" customAttribute="required" label="Jenjang Pendidikan" isStack="{{ true }}" />
+
+                            <x-input type="file" globalAttribute="foto" :defaultValue="old('foto')" label="Foto" isStack="{{ true }}" />
 
                             <div class="row">
                                 <div class="col" style="text-align: right;">

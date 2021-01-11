@@ -26,7 +26,8 @@ class WaliKelasRequest extends FormRequest
         return [
             'nip' => 'required',
             'nama' => 'required',
-            'ttl' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'kelas_id' => 'required',
             'email' => 'required',

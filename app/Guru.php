@@ -9,12 +9,14 @@ class Guru extends Model
     protected $fillable = [
         'nip',
         'nama',
-        'ttl',
+        'tempat_lahir',
+        'tanggal_lahir',
         'email',
         'jenis_kelamin',
         'mapel_id',
         'hp',
         'jenjang_pendidikan',
+        'foto'
     ];
 
     public function mapel()

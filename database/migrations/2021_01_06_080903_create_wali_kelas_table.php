@@ -17,8 +17,9 @@ class CreateWaliKelasTable extends Migration
             $table->id();
             $table->string('nip')->nullable();
             $table->string('nama')->nullable();
-            $table->string('ttl')->nullable();
             $table->string('ttd')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->string('tanggal_lahir')->nullable();
             $table->string('jenis_kelamin')->nullable();
             $table->foreignId('kelas_id')->nullable();
             $table->string('hp')->nullable();

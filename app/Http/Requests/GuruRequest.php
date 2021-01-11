@@ -26,7 +26,8 @@ class GuruRequest extends FormRequest
         return [
             'nip' => 'required',
             'nama' => 'required',
-            'ttl' => 'required',
+            'tempat_lahir' => 'required',
+            'tanggal_lahir' => 'required',
             'email' => 'required',
             'jenis_kelamin' => 'required',
             'mapel_id' => 'required',

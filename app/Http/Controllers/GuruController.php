@@ -42,7 +42,16 @@ class GuruController extends Controller
     {
         $request->validated();
         try{
-            Guru::create($request->all());
+            $data = Guru::create($request->except('foto'));
+            if ($request->hasFile('foto')) {
+                $uploaded_image = $request->file('foto');
+                $extension = $uploaded_image->getClientOriginalExtension();
+                $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'img';
+                $filename = md5(microtime()) . '.' . $extension;
+                $uploaded_image->move($destinationPath, $filename);
+                $data->foto = $filename;
+                $data->save();
+            }
             $success=true;
             $status = 'Guru Berhasil di Buat';
         }catch(Throwable $e){
@@ -86,7 +95,16 @@ class GuruController extends Controller
     {
         $request->validated();
         try{
-            $guru->update($request->all());
+            $guru->update($request->except('foto'));
+            if ($request->hasFile('foto')) {
+                $uploaded_image = $request->file('foto');
+                $extension = $uploaded_image->getClientOriginalExtension();
+                $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'img';
+                $filename = md5(microtime()) . '.' . $extension;
+                $uploaded_image->move($destinationPath, $filename);
+                $guru->foto = $filename;
+                $guru->update();
+            }
             $success=true;
             $status = 'Guru Berhasil di Perbarui';
         }catch(Throwable $e){
