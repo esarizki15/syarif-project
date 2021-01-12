@@ -32,3 +32,4 @@ Route::resource('jadwal', 'JadwalController')->middleware('auth');
 Route::resource('wali-kelas', 'WaliKelasController')->middleware('auth');
 Route::resource('role', 'RoleController')->middleware('auth');
 Route::resource('semester', 'SemesterController')->middleware('auth');
+Route::resource('nilai', 'NilaiController')->middleware('auth');

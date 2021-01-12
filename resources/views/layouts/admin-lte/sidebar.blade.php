@@ -151,7 +151,7 @@
               </li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <i class="nav-icon fas fa-star"></i>
                   <p>
                     Nilai
                     <i class="right fas fa-angle-left"></i>
@@ -159,7 +159,7 @@
                 </a>
                 <ul class="nav nav-treeview" style="display: none;">
                   <li class="nav-item">
-                    <a href="{{ route('siswa.index') }}" class="nav-link {{ (request()->is('siswa*')) ? 'active' : '' }}">
+                    <a href="{{ route('nilai.index') }}" class="nav-link {{ (request()->is('nilai*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>
                         Tugas
