@@ -10,4 +10,10 @@ class Ekskul extends Model
         'name',
         'nama_singkat'
     ];
+
+
+    public function siswas()
+    {
+        return $this->hasMany('App\Siswa');
+    }
 }

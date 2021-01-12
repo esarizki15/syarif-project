@@ -22,6 +22,7 @@
                         <tr>
                             <th scope="col">Nama</th>
                             <th scope="col">Nama Singkat</th>
+                            <th scope="col">Jumlah Peminat</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -30,6 +31,7 @@
                             <tr>
                                 <td>{{ ucwords($data->name) }}</td>
                                 <td>{{ strtoupper($data->nama_singkat) }}</td>
+                                <td>{{ $data->siswas->count() }}</td>
                                 <td>
                                     @include('partial.action', ['data' => $data, 'route'=>'ekskul'])
                                 </td>
