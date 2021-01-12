@@ -182,6 +182,14 @@
                       </p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('kehadiran.index') }}" class="nav-link {{ (request()->is('kehadiran*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Kehadiran
+                      </p>
+                    </a>
+                  </li>
                 </ul>
               </li>
             @endif
