@@ -174,6 +174,14 @@
                       </p>
                     </a>
                   </li>
+                  <li class="nav-item">
+                    <a href="{{ route('nilai-sikap.index') }}" class="nav-link {{ (request()->is('nilai-sikap*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Sikap
+                      </p>
+                    </a>
+                  </li>
                 </ul>
               </li>
             @endif
