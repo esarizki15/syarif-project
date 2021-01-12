@@ -11,11 +11,11 @@
         @enderror
     </div>
 </div>
-@section('script')
+{{-- @section('script')
 <script src="https://cdn.tiny.cloud/1/ozc9x14w309wc8eot0igzgly7fpfjmxtln50aaj7fi2mfrj2/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script>
     tinymce.init({
       selector: '.textarea'
     });
   </script>
-@endsection
+@endsection --}}
