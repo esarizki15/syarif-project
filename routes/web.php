@@ -31,3 +31,4 @@ Route::resource('guru', 'GuruController')->middleware('auth');
 Route::resource('jadwal', 'JadwalController')->middleware('auth');
 Route::resource('wali-kelas', 'WaliKelasController')->middleware('auth');
 Route::resource('role', 'RoleController')->middleware('auth');
+Route::resource('semester', 'SemesterController')->middleware('auth');

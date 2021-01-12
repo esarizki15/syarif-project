@@ -118,6 +118,14 @@
                     </a>
                   </li>
                   <li class="nav-item">
+                    <a href="{{ route('semester.index') }}" class="nav-link {{ (request()->is('semester*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Semester
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
                     <a href="{{ route('ekskul.index') }}" class="nav-link {{ (request()->is('ekskul*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>
@@ -137,6 +145,25 @@
                     <a href="{{ route('role.index') }}" class="nav-link {{ (request()->is('role*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>Role</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Nilai
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview" style="display: none;">
+                  <li class="nav-item">
+                    <a href="{{ route('siswa.index') }}" class="nav-link {{ (request()->is('siswa*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Tugas
+                      </p>
                     </a>
                   </li>
                 </ul>
