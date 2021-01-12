@@ -159,10 +159,18 @@
                 </a>
                 <ul class="nav nav-treeview" style="display: none;">
                   <li class="nav-item">
-                    <a href="{{ route('nilai.index') }}" class="nav-link {{ (request()->is('nilai*')) ? 'active' : '' }}">
+                    <a href="{{ route('nilai.index') }}" class="nav-link {{ (request()->is('nilai/*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
                       <p>
                         Tugas
+                      </p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="{{ route('nilai-ekskul.index') }}" class="nav-link {{ (request()->is('nilai-ekskul*')) ? 'active' : '' }}">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>
+                        Ekskul
                       </p>
                     </a>
                   </li>

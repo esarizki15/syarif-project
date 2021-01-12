@@ -6,6 +6,8 @@ use App\User;
 use App\Mapel;
 use App\Ekskul;
 use App\Kelas;
+use App\Siswa;
+use App\Semester;
 class UserSeeder extends Seeder
 {
     /**
@@ -15,6 +17,28 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $siswa = new Siswa();
+        $siswa->nis = "112";
+        $siswa->nama = "Jalal";
+        $siswa->tempat_lahir = "tangerang";
+        $siswa->tanggal_lahir = "02-09-1997";
+        $siswa->nama_orang_tua = "tes";
+        $siswa->email = "tes@gmail.com";
+        $siswa->jenis_kelamin = "l";
+        $siswa->kelas_id = "1";
+        $siswa->ekskul_id = "1";
+        $siswa->hp = "123423232";
+        $siswa->alamat = "tes alamat";
+        $siswa->save();
+        
+        $semester = new Semester();
+        $semester->kode_semester = "111";
+        $semester->nama_semester = "tes semester";
+        $semester->nama_tahun_ajar = "tes tahun ajar";
+        $semester->nama_tahun_pelajaran = "tes tahun pelajaran";
+        $semester->semester = "1";
+        $semester->save();
+
         $ekskul = new Ekskul();
         $ekskul->name = "Palang Merah Remaja";
         $ekskul->nama_singkat = "PMR";
