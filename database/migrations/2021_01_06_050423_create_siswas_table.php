@@ -17,7 +17,8 @@ class CreateSiswasTable extends Migration
             $table->id();
             $table->string('nis')->nullable();
             $table->string('nama')->nullable();
-            $table->string('ttl')->nullable();
+            $table->string('tempat_lahir')->nullable();
+            $table->string('tanggal_lahir')->nullable();
             $table->string('nama_orang_tua')->nullable();
             $table->string('email')->nullable();
             $table->string('jenis_kelamin')->nullable();
@@ -25,6 +26,7 @@ class CreateSiswasTable extends Migration
             $table->foreignId('ekskul_id')->nullable();
             $table->string('hp')->nullable();
             $table->string('alamat')->nullable();
+            $table->string('foto')->nullable();
             $table->timestamps();
         });
     }

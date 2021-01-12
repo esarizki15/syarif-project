@@ -20,6 +20,7 @@
                     <thead>
                         <tr>
                         <th scope="col">Nama</th>
+                        <th scope="col">Jumlah User</th>
                         <th scope="col">Aksi</th>
                         </tr>
                     </thead>
@@ -27,6 +28,7 @@
                         @foreach ($roles as $role)
                             <tr>
                                 <td>{{ $role->name }}</td>
+                                <td>{{ $role->users->count() }}</td>
                                 <td>
                                     <x-action route="role" :object="$role"></x-action>
                                     {{-- @include('partial.action', ['data' => $role, 'route'=>'role']) --}}

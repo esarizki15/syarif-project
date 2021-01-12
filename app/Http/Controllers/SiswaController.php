@@ -8,7 +8,7 @@ use App\Ekskul;
 use Illuminate\Http\Request;
 use App\Http\Requests\SiswaRequest;
 use Throwable;
-
+use File;
 class SiswaController extends Controller
 {
     /**
@@ -44,7 +44,16 @@ class SiswaController extends Controller
     {
         $request->validated();
         try{
-            Siswa::create($request->all());
+            $data = Siswa::create($request->except('foto'));
+            if ($request->hasFile('foto')) {
+                $uploaded_image = $request->file('foto');
+                $extension = $uploaded_image->getClientOriginalExtension();
+                $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'img';
+                $filename = md5(microtime()) . '.' . $extension;
+                $uploaded_image->move($destinationPath, $filename);
+                $data->foto = $filename;
+                $data->save();
+            }
             $success=true;
             $status = 'Siswa Berhasil di Buat';
         }catch(Throwable $e){
@@ -89,7 +98,21 @@ class SiswaController extends Controller
     {
         $request->validated();
         try{
-            $siswa->update($request->all());
+            $oldFileName = $siswa->foto;
+            $siswa->update($request->except('foto'));
+            if ($request->hasFile('foto')) {
+                $uploaded_image = $request->file('foto');
+                $extension = $uploaded_image->getClientOriginalExtension();
+                $destinationPath = public_path() . DIRECTORY_SEPARATOR . 'img';
+                $filename = md5(microtime()) . '.' . $extension;
+                $uploaded_image->move($destinationPath, $filename);
+                $siswa->foto = $filename;
+                if($siswa->update()){
+                    if(File::exists($destinationPath . '/' . $oldFileName)) {
+                        File::delete($destinationPath . '/' . $oldFileName);
+                    }
+                }
+            }
             $success=true;
             $status = 'Siswa Berhasil di Perbarui';
         }catch(Throwable $e){

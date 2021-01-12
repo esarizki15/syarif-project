@@ -20,22 +20,31 @@
                 <table class="table table-hover display nowrap" style="width:100%">
                     <thead>
                         <tr>
+                            <th scope="col">Foto</th>
                             <th scope="col">NIS</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Jenis Kelamin</th>
                             <th scope="col">Kelas</th>
                             <th scope="col">Email</th>
+                            <th scope="col">No Hp</th>
+                            <th scope="col">Alamat</th>
+                            <th scope="col">Nama Wali</th>
                             <th scope="col">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($siswa as $data)
                             <tr>
+                                <td><img src="{{ asset('img/' . $data->foto) }}" alt="none" style="max-width: -webkit-fill-available;
+                                    max-height: 200px;"></td>
                                 <td>{{ strtoupper($data->nis) }}</td>
                                 <td>{{ strtoupper($data->nama) }}</td>
                                 <td>{{ strtoupper($data->jenis_kelamin) }}</td>
                                 <td>{{ strtoupper($data->kelas->name) }}</td>
                                 <td>{{ $data->email }}</td>
+                                <td>{{ $data->hp }}</td>
+                                <td>{{ $data->alamat }}</td>
+                                <td>{{ strtoupper($data->nama_orang_tua) }}</td>
                                 <td>
                                     @include('partial.action', ['data' => $data, 'route'=>'siswa'])
                                 </td>

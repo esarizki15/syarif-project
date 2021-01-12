@@ -7,7 +7,7 @@ use App\Mapel;
 use Illuminate\Http\Request;
 use App\Http\Requests\GuruRequest;
 use Throwable;
-
+use File;
 class GuruController extends Controller
 {
     /**
@@ -95,6 +95,7 @@ class GuruController extends Controller
     {
         $request->validated();
         try{
+            $oldFileName = $guru->foto;
             $guru->update($request->except('foto'));
             if ($request->hasFile('foto')) {
                 $uploaded_image = $request->file('foto');
@@ -103,7 +104,11 @@ class GuruController extends Controller
                 $filename = md5(microtime()) . '.' . $extension;
                 $uploaded_image->move($destinationPath, $filename);
                 $guru->foto = $filename;
-                $guru->update();
+                if($guru->update()){
+                    if(File::exists($destinationPath . '/' . $oldFileName)) {
+                        File::delete($destinationPath . '/' . $oldFileName);
+                    }
+                }
             }
             $success=true;
             $status = 'Guru Berhasil di Perbarui';

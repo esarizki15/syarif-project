@@ -20,7 +20,7 @@
                         {{ session('status') }}
                     </div>
                 @endif
-                <form method="POST" action="{{ route('siswa.update', $siswa->id) }}">
+                <form method="POST" action="{{ route('siswa.update', $siswa->id) }}"  enctype="multipart/form-data">
                     @method('put')
                     @csrf
                     <div class="row">
@@ -29,7 +29,9 @@
                             
                             <x-input globalAttribute="nama" :defaultValue="$siswa->nama" customAttribute="required" label="Nama Siswa" isStack="{{ true }}" />
                             
-                            <x-input globalAttribute="ttl" label="Tempat Tanggal Lahir" :defaultValue="$siswa->ttl" customAttribute="required" isStack="{{ true }}" />
+                            <x-input globalAttribute="tempat_lahir" label="Tempat Lahir" :defaultValue="$siswa->tempat_lahir" customAttribute="required" isStack="{{ true }}" />
+                        
+                            <x-input type="date" globalAttribute="tanggal_lahir" label="Tanggal Lahir" :defaultValue="$siswa->tanggal_lahir" customAttribute="required" isStack="{{ true }}" />
                             
                             <x-input globalAttribute="nama_orang_tua" label="Nama Orang Tua" :defaultValue="$siswa->nama_orang_tua" customAttribute="required" isStack="{{ true }}" />
                             
@@ -56,6 +58,15 @@
                             <x-input globalAttribute="hp" :defaultValue="$siswa->hp" customAttribute="required" label="No. Handphone" isStack="{{ true }}" />
 
                             <x-input globalAttribute="alamat" :defaultValue="$siswa->alamat" customAttribute="required" label="Alamat" isStack="{{ true }}" />
+
+                            <x-input type="file" globalAttribute="foto" :defaultValue="$siswa->foto" label="Foto" isStack="{{ true }}" />
+
+                            <div class="form-group row">
+                                <div class="col">
+                                    <img src="{{ asset('img/' . $siswa->foto) }}" alt="none" style="max-width: -webkit-fill-available;
+                                    max-height: 200px;">
+                                </div>
+                            </div>
 
                             <div class="row">
                                 <div class="col" style="text-align: right;">

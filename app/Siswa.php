@@ -9,7 +9,8 @@ class Siswa extends Model
     protected $fillable = [
         'nis',
         'nama',
-        'ttl',
+        'tempat_lahir',
+        'tanggal_lahir',
         'nama_orang_tua',
         'email',
         'jenis_kelamin',
@@ -17,6 +18,7 @@ class Siswa extends Model
         'ekskul_id',
         'hp',
         'alamat',
+        'foto',
     ];
 
     public function kelas()
