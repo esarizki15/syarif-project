@@ -41,7 +41,7 @@
                             <tr>
                                 <td>{{ $data->siswa->nis }}</td>
                                 <td>{{ ucwords($data->siswa->nama) }}</td>
-                                <td><a href="#">Download</a></td>
+                                <td><a href="{{ route('raport.show', $data->id) }}">Download</a></td>
                                 <td>{{ $data->getStatusDownload() }}</td>
                                 <td>
                                     <form method="POST" action="{{ route('raport.update', $data->id) }}">
