@@ -3,19 +3,9 @@
 @section('title')
     
 @endsection
-@section('style')
-    <style>
-        .btn-delete{
-        color: #ffffff;
-        background-color: #dc3545;
-        border-color: #dc3545;
-        box-shadow: none;
-        }
-    </style>
-@endsection
 @section('breadcrumb')
 <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
-<li class="breadcrumb-item active">Nilai</li>
+<li class="breadcrumb-item active">Raport</li>
 @endsection
 @section('content')
 <div class="container-fluid">
@@ -26,6 +16,7 @@
             <div class="card-header header-primary">Nilai</div>
 
             <div class="card-body">
+                <p><a href="{{ route('nilai.create') }}" class="btn btn-sm btn-primary">Buat</a></p>
                 <table class="table table-hover display nowrap" style="width:100%">
                     <thead>
                         <tr>
@@ -48,7 +39,7 @@
                                         {{ csrf_field() }}
                                         {{ method_field('PUT') }}
                                         <input type="hidden" name="status" value="{{ $data->getReverseStatus() }}">
-                                        <button class="btn btn-xs @if($data->status == 0)btn-success @else btn-delete @endif">{{ $data->getIzinDownload() }}</button>
+                                        <button class="btn btn-xs @if($data->status == 0)btn-success @else btn-red @endif">{{ $data->getIzinDownload() }}</button>
                                     </form>
                                 </td>
                             </tr>

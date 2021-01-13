@@ -43,6 +43,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
     .select2-container--default .select2-selection--single {
       max-height: calc(2.25rem + 2px) !important;
     }
+    .btn-red{
+          color: #ffffff;
+          background-color: #dc3545;
+          border-color: #dc3545;
+          box-shadow: none;
+      }
   </style>
   @yield('style')
 </head>
