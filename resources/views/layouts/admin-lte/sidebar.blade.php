@@ -153,7 +153,7 @@
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-star"></i>
                   <p>
-                    Nilai
+                    Data Nilai
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
