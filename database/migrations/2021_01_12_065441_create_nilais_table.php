@@ -24,6 +24,7 @@ class CreateNilaisTable extends Migration
             $table->integer('uts')->nullable();
             $table->integer('uas')->nullable();
             $table->string('predikat', 2)->nullable();
+            $table->integer('status')->default(0)->nullable();
             $table->timestamps();
         });
     }

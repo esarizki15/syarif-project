@@ -193,6 +193,14 @@
                 </ul>
               </li>
             @endif
+            <li class="nav-item">
+              <a href="{{ route('raport.index') }}" class="nav-link {{ (request()->is('raport*')) ? 'active' : '' }}">
+                <i class="far fa-file nav-icon"></i>
+                <p>
+                 Raport
+                </p>
+              </a>
+            </li>
           @endguest
         </ul>
         @auth

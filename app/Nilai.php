@@ -15,8 +15,27 @@ class Nilai extends Model
         'tugas',
         'uts',
         'uas',
-        'predikat'
+        'predikat',
+        'status'
     ];
+
+    public function getReverseStatus()
+    {
+        if($this->status == 0) return 1;
+        return 0;
+    }
+
+    public function getIzinDownload()
+    {
+        if($this->status == 0) return ucwords('ijinkan');
+        return ucwords('block raport');
+    }
+
+    public function getStatusDownload()
+    {
+        if($this->status == 0) return ucwords('blok');
+        return ucwords('bebas');
+    }
 
     public function mean(){
         return ($this->tugas + $this->uas + $this->uts) / 3;

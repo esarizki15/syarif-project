@@ -36,3 +36,4 @@ Route::resource('nilai', 'NilaiController')->middleware('auth');
 Route::resource('nilai-ekskul', 'NilaiEkskulController')->middleware('auth');
 Route::resource('nilai-sikap', 'NilaiSikapController')->middleware('auth');
 Route::resource('kehadiran', 'KehadiranController')->middleware('auth');
+Route::resource('raport', 'RaportController')->middleware('auth');
