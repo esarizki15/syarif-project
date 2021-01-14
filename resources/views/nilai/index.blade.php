@@ -20,8 +20,11 @@
                 <table class="table table-hover display nowrap" style="width:100%">
                     <thead>
                         <tr>
+                            <th scope="col">No</th>
                             <th scope="col">NIS</th>
+                            <th scope="col">Nama</th>
                             <th scope="col">Mata Pelajaran</th>
+                            <th scope="col">Kelas</th>
                             {{-- <th scope="col">Guru Pengajar</th> --}}
                             <th scope="col">Tugas</th>
                             <th scope="col">UTS</th>
@@ -34,9 +37,12 @@
                     <tbody>
                         @foreach ($nilai as $data)
                             <tr>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->siswa->nis }}</td>
+                                <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ ucwords($data->mapel->name) }}</td>
-                                {{-- <td>{{ ucwords($data->name) }}</td> --}}
+                                {{-- <td>{{ App\Guru::where('mapel_id', $data->mapel_id)->first()->nama }}</td> --}}
+                                <td>{{ $data->kelas->name }}</td>
                                 <td>{{ $data->tugas }}</td>
                                 <td>{{ $data->uts }}</td>
                                 <td>{{ $data->uas }}</td>

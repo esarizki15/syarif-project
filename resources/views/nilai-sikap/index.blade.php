@@ -20,7 +20,9 @@
                 <table class="table table-hover display nowrap" style="width:100%">
                     <thead>
                         <tr>
+                            <th scope="col">No</th>
                             <th scope="col">NIS</th>
+                            <th scope="col">Nama</th>
                             <th scope="col">Kelas</th>
                             <th scope="col">Semester</th>
                             <th scope="col">Nilai</th>
@@ -31,7 +33,9 @@
                     <tbody>
                         @foreach ($nilai as $data)
                             <tr>
+                                <td>{{ $loop->iteration }}</td>
                                 <td>{{ $data->siswa->nis }}</td>
+                                <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ $data->kelas->name }}</td>
                                 <td>{{ $data->semester->nama_semester }}</td>
                                 {{-- <td>{{ ucwords($data->name) }}</td> --}}
