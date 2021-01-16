@@ -60,7 +60,7 @@
                 </a>
               </li>
 
-              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2)
+              @if (Auth::user()->role->id == 1)
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -150,6 +150,7 @@
                   </li>
                 </ul>
               </li>
+              @endif 
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-star"></i>
@@ -158,6 +159,7 @@
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
+                @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 3)
                 <ul class="nav nav-treeview" style="display: none;">
                   <li class="nav-item">
                     <a href="{{ route('nilai.index') }}" class="nav-link {{ (request()->is('nilai/*')) ? 'active' : '' }}">
@@ -167,6 +169,7 @@
                       </p>
                     </a>
                   </li>
+                  @if(Auth::user()->role->id == 1)
                   <li class="nav-item">
                     <a href="{{ route('nilai-ekskul.index') }}" class="nav-link {{ (request()->is('nilai-ekskul*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
@@ -191,9 +194,10 @@
                       </p>
                     </a>
                   </li>
+                  @endif
                 </ul>
+                @endif
               </li>
-              @endif 
               @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2) 
               <li class="nav-item">
                 <a href="{{ route('raport.index') }}" class="nav-link {{ (request()->is('raport*')) ? 'active' : '' }}">
