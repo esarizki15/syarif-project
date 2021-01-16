@@ -62,7 +62,7 @@
             </li>
             @endif
 
-              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 3)
+              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2 || Auth::user()->role->id == 3)
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -89,6 +89,8 @@
                       </p>
                     </a>
                   </li>
+                  @endif
+                  @if (Auth::user()->role->id != 3)
                   <li class="nav-item">
                     <a href="{{ route('wali-kelas.index') }}" class="nav-link {{ (request()->is('wali-kelas*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
@@ -97,6 +99,8 @@
                       </p>
                     </a>
                   </li>
+                  @endif
+                  @if (Auth::user()->role->id == 1)
                   <li class="nav-item">
                     <a href="{{ route('kelas.index') }}" class="nav-link {{ (request()->is('kelas*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
@@ -157,6 +161,7 @@
                 </ul>
               </li>
               @endif 
+              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 3)
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-star"></i>
@@ -165,7 +170,6 @@
                     <i class="right fas fa-angle-left"></i>
                   </p>
                 </a>
-                @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 3)
                 <ul class="nav nav-treeview" style="display: none;">
                   <li class="nav-item">
                     <a href="{{ route('nilai.index') }}" class="nav-link {{ (request()->is('nilai/*')) ? 'active' : '' }}">
@@ -202,8 +206,8 @@
                   </li>
                   @endif
                 </ul>
-                @endif
               </li>
+              @endif
               @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2) 
               <li class="nav-item">
                 <a href="{{ route('raport.index') }}" class="nav-link {{ (request()->is('raport*')) ? 'active' : '' }}">
