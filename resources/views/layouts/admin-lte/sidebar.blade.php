@@ -82,7 +82,7 @@
                     </a>
                   </li>
                   @endif
-                  @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 4)
+                  @if (Auth::user()->role->id == 1)
                   <li class="nav-item">
                     <a href="{{ route('guru.index') }}" class="nav-link {{ (request()->is('guru*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
@@ -118,7 +118,7 @@
                       </p>
                     </a>
                   </li>
-                  @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 4)
+                  @if (Auth::user()->role->id == 1)
                   <li class="nav-item">
                     <a href="{{ route('mapel.index') }}" class="nav-link {{ (request()->is('mapel*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
@@ -135,7 +135,6 @@
                       </p>
                     </a>
                   </li>
-                  @if(Auth::user()->role->id == 1)
                   <li class="nav-item">
                     <a href="{{ route('ekskul.index') }}" class="nav-link {{ (request()->is('ekskul*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
@@ -159,7 +158,6 @@
                     </a>
                   </li>
                   @endif
-                  @endif
                 </ul>
               </li>
               @endif 
@@ -173,7 +171,6 @@
                   </p>
                 </a>
                 <ul class="nav nav-treeview" style="display: none;">
-                  @if(Auth::user()->role->id != 4)
                   <li class="nav-item">
                     <a href="{{ route('nilai.index') }}" class="nav-link {{ (request()->is('nilai/*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
@@ -182,7 +179,6 @@
                       </p>
                     </a>
                   </li>
-                  @endif
                   @if(Auth::user()->role->id == 1 || Auth::user()->role->id == 4)
                   <li class="nav-item">
                     <a href="{{ route('nilai-ekskul.index') }}" class="nav-link {{ (request()->is('nilai-ekskul*')) ? 'active' : '' }}">
