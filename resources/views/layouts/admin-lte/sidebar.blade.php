@@ -51,7 +51,6 @@
                 </p>
               </a>
             </li>
-            @if (Auth::user()->role->id == 1)
               <li class="nav-item">
                 <a href="{{ route('pengumuman.index') }}" class="nav-link {{ (request()->is('pengumuman*')) ? 'active' : '' }}">
                   <i class="nav-icon fa fa-briefcase"></i>
@@ -60,6 +59,8 @@
                   </p>
                 </a>
               </li>
+
+              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2)
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -192,15 +193,17 @@
                   </li>
                 </ul>
               </li>
-            @endif
-            <li class="nav-item">
-              <a href="{{ route('raport.index') }}" class="nav-link {{ (request()->is('raport*')) ? 'active' : '' }}">
-                <i class="far fa-file nav-icon"></i>
-                <p>
-                 Raport
-                </p>
-              </a>
-            </li>
+              @endif 
+              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2) 
+              <li class="nav-item">
+                <a href="{{ route('raport.index') }}" class="nav-link {{ (request()->is('raport*')) ? 'active' : '' }}">
+                  <i class="far fa-file nav-icon"></i>
+                  <p>
+                   Raport
+                  </p>
+                </a>
+              </li>
+              @endif
           @endguest
         </ul>
         @auth
