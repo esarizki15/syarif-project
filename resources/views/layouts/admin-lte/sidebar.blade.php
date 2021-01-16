@@ -62,7 +62,7 @@
             </li>
             @endif
 
-              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2 || Auth::user()->role->id == 3 || Auth::user()->role->id == 4)
+              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2 || Auth::user()->role->id == 3 || Auth::user()->role->id == 4 || Auth::user()->role->id == 5)
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-tachometer-alt"></i>
@@ -72,7 +72,7 @@
                   </p>
                 </a>
                 <ul class="nav nav-treeview" style="display: none;">
-                  @if (Auth::user()->role->id == 1)
+                  @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 5)
                   <li class="nav-item">
                     <a href="{{ route('siswa.index') }}" class="nav-link {{ (request()->is('siswa*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
@@ -110,6 +110,7 @@
                     </a>
                   </li>
                   @endif
+                  @if(Auth::user()->role->id != 5)
                   <li class="nav-item">
                     <a href="{{ route('jadwal.index') }}" class="nav-link {{ (request()->is('jadwal*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
@@ -118,6 +119,7 @@
                       </p>
                     </a>
                   </li>
+                  @endif
                   @if (Auth::user()->role->id == 1)
                   <li class="nav-item">
                     <a href="{{ route('mapel.index') }}" class="nav-link {{ (request()->is('mapel*')) ? 'active' : '' }}">
@@ -161,7 +163,7 @@
                 </ul>
               </li>
               @endif 
-              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2 || Auth::user()->role->id == 3 || Auth::user()->role->id == 4)
+              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2 || Auth::user()->role->id == 3 || Auth::user()->role->id == 4 || Auth::user()->role->id == 5)
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-star"></i>
@@ -208,7 +210,7 @@
                 </ul>
               </li>
               @endif
-              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2 || Auth::user()->role->id == 4) 
+              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2 || Auth::user()->role->id == 4 || Auth::user()->role->id == 5) 
               <li class="nav-item">
                 <a href="{{ route('raport.index') }}" class="nav-link {{ (request()->is('raport*')) ? 'active' : '' }}">
                   <i class="far fa-file nav-icon"></i>
