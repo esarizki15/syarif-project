@@ -16,7 +16,9 @@
             <div class="card-header header-primary">Nilai Kehadiran</div>
 
             <div class="card-body">
+                @if(Auth::user()->role_id != 1)
                 <p><a href="{{ route('kehadiran.create') }}" class="btn btn-sm btn-primary">Buat</a></p>
+                @endif
                 <table class="table table-hover display nowrap" style="width:100%">
                     <thead>
                         <tr>
@@ -28,7 +30,9 @@
                             <th scope="col">Sakit</th>
                             <th scope="col">Izin</th>
                             <th scope="col">Tanpa Keterangan</th>
+                            @if(Auth::user()->role_id != 1)
                             <th scope="col">Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -43,9 +47,11 @@
                                 <td>{{ $data->sakit }}</td>
                                 <td>{{ $data->izin }}</td>
                                 <td>{{ $data->tanpa_keterangan }}</td>
+                                @if(Auth::user()->role_id != 1)
                                 <td>
                                     @include('partial.action', ['data' => $data, 'route'=>'kehadiran'])
                                 </td>
+                                @endif
                             </tr>
                         @endforeach
                     </tbody>

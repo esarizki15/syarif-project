@@ -16,7 +16,9 @@
             <div class="card-header header-primary">Nilai Ekskul</div>
 
             <div class="card-body">
+                @if(Auth::user()->role_id != 1)
                 <p><a href="{{ route('nilai-ekskul.create') }}" class="btn btn-sm btn-primary">Buat</a></p>
+                @endif
                 <table class="table table-hover display nowrap" style="width:100%">
                     <thead>
                         <tr>
@@ -27,7 +29,9 @@
                             <th scope="col">Semester</th>
                             <th scope="col">Nama Ekskul</th>
                             <th scope="col">Nilai</th>
+                            @if(Auth::user()->role_id != 1)
                             <th scope="col">Aksi</th>
+                            @endif
                         </tr>
                     </thead>
                     <tbody>
@@ -41,9 +45,11 @@
                                 <td>{{ ucwords($data->ekskul->name) }}</td>
                                 {{-- <td>{{ ucwords($data->name) }}</td> --}}
                                 <td>{{ $data->nilai }}</td>
+                                @if(Auth::user()->role_id != 1)
                                 <td>
                                     @include('partial.action', ['data' => $data, 'route'=>'nilai-ekskul'])
                                 </td>
+                                @endif
                             </tr>
                         @endforeach
                     </tbody>
