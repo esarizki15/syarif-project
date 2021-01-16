@@ -24,8 +24,8 @@
                             <th scope="col">NIS</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Mata Pelajaran</th>
+                            <th scope="col">Guru Pengajar</th>
                             <th scope="col">Kelas</th>
-                            {{-- <th scope="col">Guru Pengajar</th> --}}
                             <th scope="col">Tugas</th>
                             <th scope="col">UTS</th>
                             <th scope="col">UAS</th>
@@ -41,7 +41,7 @@
                                 <td>{{ $data->siswa->nis }}</td>
                                 <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ ucwords($data->mapel->name) }}</td>
-                                {{-- <td>{{ App\Guru::where('mapel_id', $data->mapel_id)->first()->nama }}</td> --}}
+                                <td>{{ App\Guru::where('mapel_id', $data->mapel_id)->first()->nama }}</td>
                                 <td>{{ $data->kelas->name }}</td>
                                 <td>{{ $data->tugas }}</td>
                                 <td>{{ $data->uts }}</td>

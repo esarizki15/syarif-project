@@ -161,7 +161,7 @@
                 </ul>
               </li>
               @endif 
-              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 3)
+              @if (Auth::user()->role->id == 1 || Auth::user()->role->id == 2 || Auth::user()->role->id == 3)
               <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-star"></i>
