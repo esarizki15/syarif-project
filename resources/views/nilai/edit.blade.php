@@ -56,7 +56,7 @@
 
                     <x-input type="number" globalAttribute="uas" :defaultValue="$nilai->uas" label="UAS" />
 
-                    <x-input globalAttribute="predikat" :defaultValue="$nilai->predikat" />
+                    {{-- <x-input globalAttribute="predikat" :defaultValue="$nilai->predikat" /> --}}
 
                     <x-submit-button label="Update" />
                 </form>

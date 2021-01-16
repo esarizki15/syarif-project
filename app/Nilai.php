@@ -15,7 +15,7 @@ class Nilai extends Model
         'tugas',
         'uts',
         'uas',
-        'predikat',
+        // 'predikat',
         'status'
     ];
 

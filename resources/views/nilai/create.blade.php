@@ -54,8 +54,8 @@
                     <x-input type="number" globalAttribute="uts" :defaultValue="old('uts')" label="UTS" />
 
                     <x-input type="number" globalAttribute="uas" :defaultValue="old('uas')" label="UAS" />
-
-                    <x-input globalAttribute="predikat" :defaultValue="old('predikat')" />
+{{-- 
+                    <x-input globalAttribute="predikat" :defaultValue="old('predikat')" /> --}}
 
                     <x-submit-button />
                 </form>
