@@ -51,7 +51,7 @@
                 </p>
               </a>
             </li>
-            @if(Auth::user()->role->id != 3)
+            @if(Auth::user()->role->id == 1)
             <li class="nav-item">
               <a href="{{ route('pengumuman.index') }}" class="nav-link {{ (request()->is('pengumuman*')) ? 'active' : '' }}">
                 <i class="nav-icon fa fa-briefcase"></i>
@@ -89,8 +89,6 @@
                       </p>
                     </a>
                   </li>
-                  @endif
-                  @if (Auth::user()->role->id != 3)
                   <li class="nav-item">
                     <a href="{{ route('wali-kelas.index') }}" class="nav-link {{ (request()->is('wali-kelas*')) ? 'active' : '' }}">
                       <i class="far fa-circle nav-icon"></i>
