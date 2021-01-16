@@ -45,7 +45,10 @@
                                 <td>{{ $data->siswa->nis }}</td>
                                 <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ ucwords($data->mapel->name) }}</td>
-                                <td>{{ App\Guru::where('mapel_id', $data->mapel_id)->first()->nama }}</td>
+                                @php
+                                    $guru = App\Guru::where('mapel_id', $data->mapel_id)->first();     
+                                @endphp
+                                <td>{{ !empty($guru) ? $guru->nama : 'Data guru belum ada' }}</td>
                                 <td>{{ $data->kelas->name }}</td>
                                 <td>{{ $data->tugas }}</td>
                                 <td>{{ $data->uts }}</td>
