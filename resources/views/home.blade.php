@@ -1,10 +1,16 @@
 @extends('layouts.admin-lte.main')
 
 @section('content')
-<div class="container">
-    @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 5)
-    @include('partial.dashboard_info')
-    @endif
+<div class="container-fluid">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            @if(Auth::user()->role_id == 1 || Auth::user()->role_id == 5)
+                @include('partial.dashboard_info')
+            @else
+                @include('partial.dashboard_carousel')
+            @endif
+        </div>
+    </div>
     <div class="row">
         <div class="col"></div>
     </div>
