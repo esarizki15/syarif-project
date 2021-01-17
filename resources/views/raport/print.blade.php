@@ -68,7 +68,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @for ($i = 0; $i < 1; $i++)
+                        {{-- @for ($i = 0; $i < 1; $i++) --}}
                         @foreach ($dataNilai as $data)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
@@ -79,7 +79,7 @@
                             <td>{{ $data->deskripsi() }}</td>
                         </tr>
                         @endforeach
-                        @endfor
+                        {{-- @endfor --}}
                     </tbody>
                 </table>
             </div>
