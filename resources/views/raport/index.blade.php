@@ -24,7 +24,7 @@
                             <th scope="col">Tahun Pelajaran</th>
                             <th scope="col">Link Download</th>
                             <th scope="col">Status Download</th>
-                            @if(Auth::user()->role_id != 5 && Auth::user()->role_id != 4)
+                            @if(Auth::user()->role_id != 5 && Auth::user()->role_id != 4 && Auth::user()->role_id != 2)
                             <th scope="col">Izin Download</th>
                             @endif
                         </tr>
@@ -37,7 +37,7 @@
                                 <td>{{ $data->semester->nama_semester }}</td>
                                 <td><a target="_blank" href="{{ route('raport.show', $data->id) }}">Download</a></td>
                                 <td>{{ $data->getStatusDownload() }}</td>
-                                @if(Auth::user()->role_id != 5 && Auth::user()->role_id != 4)
+                                @if(Auth::user()->role_id != 5 && Auth::user()->role_id != 4 && Auth::user()->role_id != 2)
                                 <td>
                                     <form method="POST" action="{{ route('raport.update', $data->id) }}">
                                         {{ csrf_field() }}

@@ -16,7 +16,7 @@
             <div class="card-header header-primary">Nilai</div>
 
             <div class="card-body">
-                @if(Auth::user()->role_id != 1 && Auth::user()->role_id != 4 && Auth::user()->role_id != 5)
+                @if(Auth::user()->role_id == 3)
                 <p><a href="{{ route('nilai.create') }}" class="btn btn-sm btn-primary">Buat</a></p>
                 @endif
                 <table class="table table-hover display nowrap" style="width:100%">
@@ -33,7 +33,7 @@
                             <th scope="col">UAS</th>
                             <th scope="col">KKM</th>
                             <th scope="col">Status</th>
-                            @if(Auth::user()->role_id != 1 && Auth::user()->role_id != 4 && Auth::user()->role_id != 5)
+                            @if(Auth::user()->role_id == 3)
                             <th scope="col">Aksi</th>
                             @endif
                         </tr>
@@ -55,7 +55,7 @@
                                 <td>{{ $data->uas }}</td>
                                 <td>{{ $data->kkm }}</td>
                                 <td>{{ $data->status() }}</td>
-                                @if(Auth::user()->role_id != 1 && Auth::user()->role_id != 4 && Auth::user()->role_id != 5)
+                                @if(Auth::user()->role_id == 3)
                                 <td>
                                     @include('partial.action', ['data' => $data, 'route'=>'nilai'])
                                 </td>
