@@ -54,8 +54,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             top: 0;
         }
         .DivIdToPrint, .pagebreak * { 
-            /* visibility: visible; */
-             page-break-after:always; 
+             page-break-before:always; 
             display: block;
             float: none !important; 
             position: static !important;
@@ -95,7 +94,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <!-- /.content-header -->
 
     <!-- Main content -->
-    <div class="content DivIdToPrint py-5">
+    <div class="content">
       @yield('content')
     </div>
     <!-- /.content -->
