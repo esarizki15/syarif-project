@@ -19,7 +19,7 @@
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   @yield('style')
 </head>
-<body class="hold-transition register-page login-page">
+<body class="hold-transition register-page login-page" style="background-image: url('img/bg.jpg')">
 @yield('content')
 
 <!-- jQuery -->
