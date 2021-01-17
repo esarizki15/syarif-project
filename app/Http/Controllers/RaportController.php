@@ -47,7 +47,8 @@ class RaportController extends Controller
      */
     public function show($id)
     {
-        //
+        $nilai = Nilai::find($id);
+        return view('raport.print', compact('nilai'));
     }
 
     /**
