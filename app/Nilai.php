@@ -38,13 +38,28 @@ class Nilai extends Model
     }
 
     public function mean(){
-        return ($this->tugas + $this->uas + $this->uts) / 3;
+        return round(($this->tugas + $this->uas + $this->uts) / 3);
     }
 
+    public function terbilang()
+    {
+        $format = new \NumberFormatter("id", \NumberFormatter::SPELLOUT); 
+        return ucwords($format->format($this->mean()));
+    }
+    
     public function status()
     {
         if($this->mean() >= $this->kkm) return 'Lulus'; 
         return 'Tidak Lulus';
+    }
+
+    public function deskripsi()
+    {
+        if ($this->mean() < $this->kkm) return 'Tidak Lulus';
+        if(($this->mean() - $this->kkm) <= 2){
+            return 'KKM Tercapai/Tuntas';
+        }
+        return 'KKM Terlampaui';
     }
 
     public function mapel()

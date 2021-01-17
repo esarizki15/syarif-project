@@ -7,6 +7,9 @@
           {{-- <br><br><br> --}}
           <center>
               <div class="row">
+                {{-- <div>
+                    <img src="{{url('/img/logo_kop.png')}}" alt="..."  style="position:absolute;z-index:1; left:-30px; height:600px;">
+                </div> --}}
                   <div class="col">
                       <h3>YAYASAN PENDIDIKAN AL HUSNA TANGERANG</h3>
                       <h3><b>MADRASAH TSANAWIYAH AL HUSNA TANGERANG</b></h3>
@@ -26,6 +29,59 @@
                   </div>
               </div>
           </center>
+          <div class="row py-2">
+            <div class="col px-4">
+                <table class="table table-hover display nowrap text-center table-bordered" style="width:100%;">
+                    <thead>
+                        <tr>
+                            <td>No</td>
+                            <td>Nama Lengkap</td>
+                            <td>L/P</td>
+                            <td>NIS</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>{{ $nilai->siswa->nama }}</td>
+                            <td>{{ $nilai->siswa->jenis_kelamin }}</td>
+                            <td>{{ $nilai->kelas->name }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col px-4">
+                <table class="table table-hover display nowrap text-center table-bordered" style="width:100%;">
+                    <thead>
+                        <tr>
+                            <th rowspan="2" style="vertical-align: middle;">No</th>
+                            <th rowspan="2" style="vertical-align: middle;">Mata Pelajaran</th>
+                            <th rowspan="2" style="vertical-align: middle;">KKM</th>
+                            <th colspan="4" rowspan="1" style="vertical-align: middle;">Nilai</th>
+                            <th rowspan="2" style="vertical-align: middle;">Deskripsi Kemajuan Belajar</th>
+                        </tr>
+                        <tr>
+                            <th colspan="3">Angka</th>
+                            <th>Huruf</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($dataNilai as $data)
+                        <tr>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $data->mapel->name }}</td>
+                            <td>{{ $data->kkm }}</td>
+                            <td colspan="3">{{ $data->mean() }}</td>
+                            <td>{{ $data->terbilang() }}</td>
+                            <td>{{ $data->deskripsi() }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+          </div>
       </div>
     </div>
 </div>

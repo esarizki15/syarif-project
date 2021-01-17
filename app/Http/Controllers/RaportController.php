@@ -14,7 +14,7 @@ class RaportController extends Controller
      */
     public function index()
     {
-        $nilai = Nilai::all();
+        $nilai = Nilai::all()->unique('siswa_id');
         return view('raport.index', compact('nilai'));
     }
 
@@ -48,7 +48,8 @@ class RaportController extends Controller
     public function show($id)
     {
         $nilai = Nilai::find($id);
-        return view('raport.print', compact('nilai'));
+        $dataNilai = Nilai::where('siswa_id', $nilai->siswa_id)->where('semester_id', $nilai->semester_id)->where('kelas_id', $nilai->kelas_id)->get();
+        return view('raport.print', compact('nilai', 'dataNilai'));
     }
 
     /**
