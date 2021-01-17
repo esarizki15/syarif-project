@@ -12,6 +12,7 @@ class NilaiEkskul extends Model
         'ekskul_id',
         'siswa_id',
         'nilai',
+        'keterangan'
     ];
 
     public function ekskul()

@@ -27,7 +27,10 @@
                             <th scope="col">Nama</th>
                             <th scope="col">Kelas</th>
                             <th scope="col">Semester</th>
-                            <th scope="col">Nilai</th>
+                            <th scope="col">Akhlak</th>
+                            <th scope="col">Kerajinan</th>
+                            <th scope="col">Kedisiplinan</th>
+                            <th scope="col">Kerapihan dan Kebersihan</th>
                             <th scope="col">Keterangan</th>
                             @if(Auth::user()->role_id != 1)
                             <th scope="col">Aksi</th>
@@ -43,7 +46,10 @@
                                 <td>{{ $data->kelas->name }}</td>
                                 <td>{{ $data->semester->nama_semester }}</td>
                                 {{-- <td>{{ ucwords($data->name) }}</td> --}}
-                                <td>{{ $data->nilai }}</td>
+                                <td>{{ $data->akhlak }}</td>
+                                <td>{{ $data->kerajinan }}</td>
+                                <td>{{ $data->kedisiplinan }}</td>
+                                <td>{{ $data->kebersihan_dan_kerapihan }}</td>
                                 <td>{!! $data->keterangan !!}</td>
                                 @if(Auth::user()->role_id != 1)
                                 <td>

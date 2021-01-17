@@ -44,10 +44,20 @@ class UserSeeder extends Seeder
         $ekskul->nama_singkat = "PMR";
         $ekskul->save();
 
+        $ekskul1 = new Ekskul();
+        $ekskul1->name = "Pramuka";
+        $ekskul1->nama_singkat = "Pramuka";
+        $ekskul1->save();
+
         $mapel = new Mapel();
         $mapel->kode = "001";
         $mapel->name = "IPA";
         $mapel->save();
+
+        $mapel1 = new Mapel();
+        $mapel1->kode = "002";
+        $mapel1->name = "IPS";
+        $mapel1->save();
         
         $mapel = new Kelas();
         $mapel->kode = "001";

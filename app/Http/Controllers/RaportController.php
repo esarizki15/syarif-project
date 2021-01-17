@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Nilai;
+use App\Ekskul;
+use App\NilaiSikap;
+use App\Kehadiran;
 use Throwable;
 class RaportController extends Controller
 {

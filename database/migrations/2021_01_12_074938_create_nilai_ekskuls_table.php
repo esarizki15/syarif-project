@@ -19,7 +19,8 @@ class CreateNilaiEkskulsTable extends Migration
             $table->foreignId('kelas_id');
             $table->foreignId('ekskul_id');
             $table->foreignId('siswa_id');
-            $table->integer('nilai')->nullable();
+            $table->string('nilai')->nullable();
+            $table->text('keterangan')->nullable();
             $table->timestamps();
         });
     }

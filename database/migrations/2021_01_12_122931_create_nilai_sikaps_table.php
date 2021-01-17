@@ -18,7 +18,10 @@ class CreateNilaiSikapsTable extends Migration
             $table->foreignId('semester_id');
             $table->foreignId('kelas_id');
             $table->foreignId('siswa_id');
-            $table->string('nilai')->nullable();
+            $table->string('akhlak')->nullable();
+            $table->string('kerajinan')->nullable();
+            $table->string('kedisiplinan')->nullable();
+            $table->string('kebersihan_dan_kerapihan')->nullable();
             $table->text('keterangan')->nullable();
             $table->timestamps();
         });

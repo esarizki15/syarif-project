@@ -47,8 +47,10 @@
                         @endforeach
                     </x-select>
 
-                    <x-input type="number" globalAttribute="nilai" :defaultValue="old('nilai')" customAttribute="required" />
+                    <x-input globalAttribute="nilai" :defaultValue="old('nilai')" customAttribute="required" />
 
+                    <x-text-area globalAttribute="keterangan" :defaultValue="old('keterangan')" />
+                    
                     <x-submit-button />
                 </form>
             </div>

@@ -10,7 +10,10 @@ class NilaiSikap extends Model
         'semester_id',
         'kelas_id',
         'siswa_id',
-        'nilai',
+        'akhlak',
+        'kerajinan',
+        'kedisiplinan',
+        'kebersihan_dan_kerapihan',
         'keterangan'
     ];
 

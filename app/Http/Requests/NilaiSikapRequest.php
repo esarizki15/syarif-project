@@ -27,7 +27,6 @@ class NilaiSikapRequest extends FormRequest
             'semester_id' => 'required',
             'kelas_id' => 'required',
             'siswa_id' => 'required',
-            'nilai' => 'required'
         ];
     }
 }

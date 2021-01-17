@@ -41,7 +41,13 @@
                         @endforeach
                     </x-select>
 
-                    <x-input globalAttribute="nilai" :defaultValue="old('nilai')" customAttribute="required" />
+                    <x-input globalAttribute="akhlak" :defaultValue="old('akhlak')" />
+
+                    <x-input globalAttribute="kerajinan" :defaultValue="old('kerajinan')" />
+
+                    <x-input globalAttribute="kedisiplinan" :defaultValue="old('kedisiplinan')" />
+
+                    <x-input globalAttribute="kebersihan_dan_kerapihan" :defaultValue="old('kebersihan_dan_kerapihan')" label="Kebersihan dan Kerapihan" />
 
                     <x-text-area globalAttribute="keterangan" :defaultValue="old('keterangan')" />
                     

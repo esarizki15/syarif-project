@@ -82,6 +82,65 @@
                 </table>
             </div>
           </div>
+          <div class="row py-2">
+            <div class="col px-4">
+                <table class="table table-hover display nowrap text-center table-bordered" style="width:100%;">
+                    @php
+                    $format = new \NumberFormatter("id", \NumberFormatter::SPELLOUT); 
+                    $sumTugas = $dataNilai->sum('tugas');
+                    $sumUts = $dataNilai->sum('uts');
+                    $sumUas = $dataNilai->sum('uas');
+                    $sumNilai = round(($sumTugas + $sumUas + $sumUts) / 3);
+                    $meanNilai = round($sumNilai / $dataNilai->count());
+                    @endphp
+                    <tbody>
+                        <tr>
+                            <td style="font-weight: bold">Jumlah</td>
+                            <td style="font-weight: bold">{{ $sumNilai }}</td>
+                            <td colspan="3">
+                                {{ ucwords($format->format($sumNilai)) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold">Rata-Rata</td>
+                            <td style="font-weight: bold">{{ $meanNilai }}</td>
+                            <td colspan="3">
+                                {{ ucwords($format->format($meanNilai)) }}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="font-weight: bold">Peringkat Ke</td>
+                            <td style="font-weight: bold">20</td>
+                            <td>dari</td>
+                            <td style="font-weight: bold">40</td>
+                            <td>Siswa</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col px-4">
+                <table class="table table-hover display nowrap text-center table-bordered" style="width:100%;">
+                    @php
+                    @endphp
+                    <thead>
+                        <tr>
+                            <th style="vertical-align: middle;">Nama</th>
+                            <th style="vertical-align: middle;">Nilai</th>
+                            <th style="vertical-align: middle;">Keterangan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($dataEkskul as $data)
+                        <tr>
+                            <td></td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+          </div>
       </div>
     </div>
 </div>
