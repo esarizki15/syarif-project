@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Nilai;
+use App\NilaiTotal;
 use App\Semester;
 use App\Kelas;
 use App\Mapel;
@@ -48,9 +49,35 @@ class NilaiController extends Controller
     {
         $request->validated();
         try{
-            Nilai::create($request->all());
             $success=true;
             $status = 'Nilai Berhasil di Buat';
+            $nilai = Nilai::updateOrCreate(
+                [
+                    'semester_id' =>  $request->semester_id,
+                    'kelas_id' =>  $request->kelas_id,
+                    'siswa_id' =>  $request->siswa_id,
+                    'mapel_id' =>  $request->mapel_id,
+                ],
+                $request->all()
+            );
+            if($nilai){
+                $nilaiSiswa = Nilai::where('siswa_id', $nilai->siswa_id)->where('semester_id', $nilai->semester_id)->where('kelas_id', $nilai->kelas_id)->get();
+                $sumTugas = $nilaiSiswa->sum('tugas');
+                $sumUts = $nilaiSiswa->sum('uts');
+                $sumUas = $nilaiSiswa->sum('uas');
+                $total = $sumTugas + $sumUts + $sumUas;
+                
+                $nilaiTotal = NilaiTotal::updateOrCreate(
+                    [
+                        'semester_id' =>  $nilai->semester_id,
+                        'kelas_id' =>  $nilai->kelas_id,
+                        'siswa_id' =>  $nilai->siswa_id,
+                    ],
+                    [
+                        'nilai' => $total
+                    ]
+                );
+            }
         }catch(Throwable $e){
             $success=false;
             $status = $e->getMessage();
@@ -95,9 +122,27 @@ class NilaiController extends Controller
     {
         $request->validated();
         try{
-            $nilai->update($request->all());
             $success=true;
             $status = 'Nilai Berhasil di Perbarui';
+            $data = $nilai->update($request->all());
+            if($data){
+                $nilaiSiswa = Nilai::where('siswa_id', $nilai->siswa_id)->where('semester_id', $nilai->semester_id)->where('kelas_id', $nilai->kelas_id)->get();
+                $sumTugas = $nilaiSiswa->sum('tugas');
+                $sumUts = $nilaiSiswa->sum('uts');
+                $sumUas = $nilaiSiswa->sum('uas');
+                $total = $sumTugas + $sumUts + $sumUas;
+                
+                $nilaiTotal = NilaiTotal::updateOrCreate(
+                    [
+                        'semester_id' =>  $nilai->semester_id,
+                        'kelas_id' =>  $nilai->kelas_id,
+                        'siswa_id' =>  $nilai->siswa_id,
+                    ],
+                    [
+                        'nilai' => $total
+                    ]
+                );
+            }
         }catch(Throwable $e){
             $success=false;
             $status = $e->getMessage();
@@ -114,9 +159,33 @@ class NilaiController extends Controller
     public function destroy(Nilai $nilai)
     {
         try{
-            $nilai->delete();
+            $oldNilai = $nilai;
             $success=true;
             $status = 'Nilai Berhasil di Hapus';
+            $deleted = $nilai->delete();
+            if($deleted){
+                $nilaiSiswa = Nilai::where('siswa_id', $oldNilai->siswa_id)->where('semester_id', $oldNilai->semester_id)->where('kelas_id', $oldNilai->kelas_id)->get();
+                
+                if(!empty($nilaiSiswa)){
+                    $sumTugas = $nilaiSiswa->sum('tugas');
+                    $sumUts = $nilaiSiswa->sum('uts');
+                    $sumUas = $nilaiSiswa->sum('uas');
+                    $total = $sumTugas + $sumUts + $sumUas;
+                    $nilaiTotal = NilaiTotal::updateOrCreate(
+                        [
+                            'semester_id' =>  $oldNilai->semester_id,
+                            'kelas_id' =>  $oldNilai->kelas_id,
+                            'siswa_id' =>  $oldNilai->siswa_id,
+                        ],
+                        [
+                            'nilai' => $total
+                        ]
+                    );
+                }else{
+                    $nilaiTotal = NilaiTotal::where('nilai_id',$oldNilai->id)->first();
+                    $nilaiTotal->delete();
+                }
+            }
         }catch(Throwable $e){
             $success=false;
             $status = $e->getMessage();

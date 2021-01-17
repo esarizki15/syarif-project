@@ -94,7 +94,16 @@
                     $sumUas = $dataNilai->sum('uas');
                     $sumNilai = round(($sumTugas + $sumUas + $sumUts) / 3);
                     $meanNilai = round($sumNilai / $dataNilai->count());
+
+                    $peringkatSaya = 0;
                     @endphp
+                    @foreach($nilaiTotal as $data)
+                    @if($data->siswa_id == $nilai->siswa_id)
+                        @php
+                            $peringkatSaya = $loop->iteration;
+                        @endphp        
+                    @endif
+                    @endforeach
                     <tbody>
                         <tr>
                             <td style="font-weight: bold">Jumlah</td>
@@ -112,9 +121,9 @@
                         </tr>
                         <tr>
                             <td style="font-weight: bold">Peringkat Ke</td>
-                            <td style="font-weight: bold">20</td>
+                            <td style="font-weight: bold">{{ $peringkatSaya }}</td>
                             <td>dari</td>
-                            <td style="font-weight: bold">40</td>
+                            <td style="font-weight: bold">{{ $nilaiTotal->count() }}</td>
                             <td>Siswa</td>
                         </tr>
                     </tbody>

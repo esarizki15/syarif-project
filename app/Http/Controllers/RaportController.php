@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Nilai;
+use App\NilaiTotal;
+use App\Siswa;
 use App\NilaiEkskul;
 use App\NilaiSikap;
 use App\Kehadiran;
@@ -52,10 +54,12 @@ class RaportController extends Controller
     {
         $nilai = Nilai::find($id);
         $dataNilai = Nilai::where('siswa_id', $nilai->siswa_id)->where('semester_id', $nilai->semester_id)->where('kelas_id', $nilai->kelas_id)->get();
+        $nilaiSiswa = Nilai::where('semester_id', $nilai->semester_id)->where('kelas_id', $nilai->kelas_id)->get()->groupBy('siswa_id');
+        $nilaiTotal = NilaiTotal::where('semester_id', $nilai->semester_id)->where('kelas_id', $nilai->kelas_id)->orderBy('nilai', 'desc')->get();
         $dataEkskul = NilaiEkskul::where('siswa_id', $nilai->siswa_id)->where('semester_id', $nilai->semester_id)->where('kelas_id', $nilai->kelas_id)->get();
         $dataSikap = NilaiSikap::where('siswa_id', $nilai->siswa_id)->where('semester_id', $nilai->semester_id)->where('kelas_id', $nilai->kelas_id)->first();
         $dataKehadiran = Kehadiran::where('siswa_id', $nilai->siswa_id)->where('semester_id', $nilai->semester_id)->where('kelas_id', $nilai->kelas_id)->first();
-        return view('raport.print', compact('nilai', 'dataNilai', 'dataEkskul', 'dataSikap', 'dataKehadiran'));
+        return view('raport.print', compact('nilai', 'dataNilai', 'dataEkskul', 'dataSikap', 'dataKehadiran', 'nilaiTotal'));
     }
 
     /**
