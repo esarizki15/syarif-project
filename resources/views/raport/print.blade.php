@@ -126,7 +126,8 @@
                     @endphp
                     <thead>
                         <tr>
-                            <th style="vertical-align: middle;">Nama</th>
+                            <th style="vertical-align: middle;">No</th>
+                            <th style="vertical-align: middle;">Kegiata Ekstrakurikuler</th>
                             <th style="vertical-align: middle;">Nilai</th>
                             <th style="vertical-align: middle;">Keterangan</th>
                         </tr>
@@ -134,9 +135,81 @@
                     <tbody>
                         @foreach($dataEkskul as $data)
                         <tr>
-                            <td></td>
+                            <td>{{ $loop->iteration }}</td>
+                            <td>{{ $data->ekskul->name }}</td>
+                            <td>{{ $data->nilai }}</td>
+                            <td>{{ $data->keterangan }}</td>
                         </tr>
                         @endforeach
+                    </tbody>
+                </table>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col px-4">
+                <table class="table table-hover display nowrap text-center table-bordered" style="width:100%;">
+                    @php
+                    @endphp
+                    <thead>
+                        <tr>
+                            <th style="vertical-align: middle;">No</th>
+                            <th style="vertical-align: middle;">Nilai Sikap dan Kepribadian</th>
+                            <th style="vertical-align: middle;">Nilai</th>
+                            <th style="vertical-align: middle;">Keterangan Absensi</th>
+                            <th style="vertical-align: middle;">Jumlah Hari</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Akhlak</td>
+                            <td>{{ !empty($dataSikap) ? $dataSikap->akhlak : '' }}</td>
+                            <td>Sakit</td>
+                            <td>{{ !empty($dataKehadiran) ? $dataKehadiran->sakit : '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Kerajinan</td>
+                            <td>{{ !empty($dataSikap) ? $dataSikap->kerajinan : '' }}</td>
+                            <td>Izin</td>
+                            <td>{{ !empty($dataKehadiran) ? $dataKehadiran->izin : '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Kedisiplinan</td>
+                            <td>{{ !empty($dataSikap) ? $dataSikap->kedisiplinan : '' }}</td>
+                            <td>Tanpa Keterangan</td>
+                            <td>{{ !empty($dataKehadiran) ? $dataKehadiran->tanpa_keterangan : '-' }}</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>Kebersihan dan Kerapihan</td>
+                            <td>{{ !empty($dataSikap) ? $dataSikap->kebersihan_dan_kerapihan : '' }}</td>
+                            <td>Jumlah</td>
+                            @php
+                                $jumlah = 0;
+                                if(!empty($dataKehadiran)){
+                                    $jumlah = int($dataKehadiran->sakit) + int($dataKehadiran->izin) + int($dataKehadiran->tanpa_keterangan);   
+                                } 
+                            @endphp
+                            <td>{{ $jumlah }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+          <div class="row py-2">
+            <div class="col px-4">
+                <table class="table table-hover display nowrap text-center table-bordered" style="width:100%;">
+                    <thead>
+                        <tr>
+                            <th style="vertical-align: middle;">Pesan Wali Kelas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="text-left">{{ !empty($dataSikap) ? $dataSikap->keterangan : '' }}</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
