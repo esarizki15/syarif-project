@@ -8,7 +8,7 @@
           <center>
               <div class="row">
                 <div>
-                    <img src="{{url('/img/logo_0.png')}}" alt="..."  style="position:absolute;z-index:1;  height:170px;">
+                    <img src="{{url('/img/logo_01.png')}}" alt="..."  style="position:absolute;z-index:1;  height:170px;">
                 </div>
                   <div class="col">
                       <h3>YAYASAN PENDIDIKAN AL HUSNA TANGERANG</h3>

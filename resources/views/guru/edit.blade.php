@@ -51,7 +51,7 @@
 
                             <x-input globalAttribute="jenjang_pendidikan" :defaultValue="$guru->jenjang_pendidikan" customAttribute="required" label="Jenjang Pendidikan" isStack="{{ true }}" />
 
-                            <x-input type="file" globalAttribute="foto" :defaultValue="$guru->foto" customAttribute="required" label="Foto" isStack="{{ true }}" />
+                            <x-input type="file" globalAttribute="foto" :defaultValue="$guru->foto" label="Foto" isStack="{{ true }}" />
 
                             <div class="form-group row">
                                 <div class="col">

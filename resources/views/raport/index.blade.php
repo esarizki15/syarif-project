@@ -35,7 +35,7 @@
                                 <td>{{ $data->siswa->nis }}</td>
                                 <td>{{ ucwords($data->siswa->nama) }}</td>
                                 <td>{{ $data->semester->nama_semester }}</td>
-                                <td><a target="_blank" href="{{ route('raport.show', $data->id) }}">Download</a></td>
+                                <td><a @if($data->status == 1) target="_blank" href="{{ route('raport.show', $data->id) }}" @else href="#" @endif>Download</a></td>
                                 <td>{{ $data->getStatusDownload() }}</td>
                                 @if(Auth::user()->role_id != 5 && Auth::user()->role_id != 4 && Auth::user()->role_id != 2)
                                 <td>
