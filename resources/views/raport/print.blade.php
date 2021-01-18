@@ -38,6 +38,7 @@
                             <td>Nama Lengkap</td>
                             <td>L/P</td>
                             <td>NIS</td>
+                            <td>Kelas</td>
                         </tr>
                     </thead>
                     <tbody>
@@ -45,6 +46,7 @@
                             <td>1</td>
                             <td>{{ $nilai->siswa->nama }}</td>
                             <td>{{ $nilai->siswa->jenis_kelamin }}</td>
+                            <td>{{ $nilai->siswa->nis }}</td>
                             <td>{{ $nilai->kelas->name }}</td>
                         </tr>
                     </tbody>
