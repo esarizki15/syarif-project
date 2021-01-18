@@ -254,6 +254,7 @@
                         <div class="col">
                             <br><br><br>
                         </div>
+                        {{ empty($walikelas) }}
                         <div class="col">
                             @if (!empty($walikelas))
                             <img src="{{url('/img/'. $walikelas->ttd)}}" alt="..."  style="height:80px;">
@@ -263,7 +264,7 @@
                     <div class="row py-2 text-center">
                         <div class="col"><b><u>{{ $nilai->siswa->nama_orang_tua }}</u></b></div>
                         <div class="col"><b><u>
-                            {{ !empty($walikelas) ? $walikelas->nama : '......................................' }}
+                            {{ !empty($walikelas) ? $walikelas->nama . ", " . $walikelas->jenjang_pendidikan : '......................................' }}
                         </u></b></div>
                     </div>
                     <div class="row text-center">
