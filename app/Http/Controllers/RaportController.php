@@ -10,6 +10,7 @@ use App\NilaiEkskul;
 use App\NilaiSikap;
 use App\Kehadiran;
 use Throwable;
+use Auth;
 class RaportController extends Controller
 {
     /**
@@ -19,7 +20,14 @@ class RaportController extends Controller
      */
     public function index()
     {
-        $nilai = Nilai::all()->unique('siswa_id');
+        // $nilai = Nilai::all()->unique('siswa_id');
+        $nilai = Nilai::all()->unique(function ($item) {
+            return $item['siswa_id'].$item['semester_id'];
+        });
+        if(Auth::user()->role_id == 2){
+            $nilai = Nilai::where('siswa_id', Auth::user()->id)->get()->unique('semester_id');
+        }
+        // dd($nilai);
         return view('raport.index', compact('nilai'));
     }
 
