@@ -26,6 +26,7 @@
                             <th scope="col">NIS</th>
                             <th scope="col">Nama</th>
                             <th scope="col">Mata Pelajaran</th>
+                            <th scope="col">Semester</th>
                             <th scope="col">Guru Pengajar</th>
                             <th scope="col">Kelas</th>
                             <th scope="col">Tugas</th>
@@ -45,6 +46,7 @@
                                 <td>{{ $data->siswa->nis }}</td>
                                 <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ ucwords($data->mapel->name) }}</td>
+                                <td>{{ ucwords($data->semester->nama_semester) }}</td>
                                 @php
                                     $guru = App\Guru::where('mapel_id', $data->mapel_id)->first();     
                                 @endphp

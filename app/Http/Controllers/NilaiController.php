@@ -8,6 +8,7 @@ use App\Semester;
 use App\Kelas;
 use App\Mapel;
 use App\Siswa;
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Requests\NilaiRequest;
 use Throwable;
@@ -22,6 +23,9 @@ class NilaiController extends Controller
     public function index()
     {
         $nilai = Nilai::all();
+        if(Auth::user()->role_id == 2){
+            $nilai = Nilai::where('siswa_id', Auth::user()->id)->get()->unique('semester_id');
+        }
         return view('nilai.index', compact('nilai'));
     }
 
