@@ -33,7 +33,7 @@ class SiswaRequest extends FormRequest
             'jenis_kelamin' => 'required',
             'kelas_id' => 'required',
             'ekskul_id' => 'required',
-            'hp' => 'required',
+            // 'hp' => 'required',
             'alamat' => 'required',
         ];
     }
