@@ -55,7 +55,7 @@
                                 @endforeach
                             </x-select>
 
-                            <x-input globalAttribute="hp" :defaultValue="$siswa->hp" customAttribute="required" label="No. Handphone" isStack="{{ true }}" />
+                            <x-input globalAttribute="hp" :defaultValue="$siswa->hp"  label="No. Handphone" isStack="{{ true }}" />
 
                             <x-input globalAttribute="alamat" :defaultValue="$siswa->alamat" customAttribute="required" label="Alamat" isStack="{{ true }}" />
 

@@ -24,9 +24,9 @@ class RaportController extends Controller
         $nilai = Nilai::all()->unique(function ($item) {
             return $item['siswa_id'].$item['semester_id'];
         });
-        if(Auth::user()->role_id == 2){
-            $nilai = Nilai::where('siswa_id', Auth::user()->id)->get()->unique('semester_id');
-        }
+        // if(Auth::user()->role_id == 2){
+        //     $nilai = Nilai::where('siswa_id', Auth::user()->id)->get()->unique('semester_id');
+        // }
         // dd($nilai);
         return view('raport.index', compact('nilai'));
     }
