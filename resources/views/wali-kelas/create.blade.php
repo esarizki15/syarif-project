@@ -32,7 +32,7 @@
                             
                             <x-input type="date" globalAttribute="tanggal_lahir" label="Tanggal Lahir" :defaultValue="old('tanggal_lahir')" customAttribute="required" isStack="{{ true }}" />
                             
-                            <x-input globalAttribute="ttd" type="file" label="Tanda Tangan" :defaultValue="old('ttd')" customAttribute="required" isStack="{{ true }}" />
+                            <x-input globalAttribute="ttd" type="file" label="Tanda Tangan" :defaultValue="old('ttd')" isStack="{{ true }}" />
 
                             <div class="form-group row">
                                 <div class="col">
