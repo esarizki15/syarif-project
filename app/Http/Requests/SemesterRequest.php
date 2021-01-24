@@ -24,10 +24,10 @@ class SemesterRequest extends FormRequest
     public function rules()
     {
         return [
-            'kode_semester'=>'required',
+            // 'kode_semester'=>'required',
             'nama_semester'=>'required',
             'nama_tahun_ajar'=>'required',
-            'nama_tahun_pelajaran'=>'required',
+            // 'nama_tahun_pelajaran'=>'required',
             'semester' => 'required'
         ];
     }

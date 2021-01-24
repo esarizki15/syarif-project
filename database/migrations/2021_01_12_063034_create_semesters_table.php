@@ -15,10 +15,10 @@ class CreateSemestersTable extends Migration
     {
         Schema::create('semesters', function (Blueprint $table) {
             $table->id();
-            $table->string('kode_semester');
+            // $table->string('kode_semester');
             $table->string('nama_semester');
             $table->string('nama_tahun_ajar');
-            $table->string('nama_tahun_pelajaran');
+            // $table->string('nama_tahun_pelajaran');
             $table->string('semester');
             $table->timestamps();
         });

@@ -32,10 +32,10 @@ class UserSeeder extends Seeder
         $siswa->save();
         
         $semester = new Semester();
-        $semester->kode_semester = "111";
+        // $semester->kode_semester = "111";
         $semester->nama_semester = "tes semester";
         $semester->nama_tahun_ajar = "tes tahun ajar";
-        $semester->nama_tahun_pelajaran = "tes tahun pelajaran";
+        // $semester->nama_tahun_pelajaran = "tes tahun pelajaran";
         $semester->semester = "1";
         $semester->save();
 

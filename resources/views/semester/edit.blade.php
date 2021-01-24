@@ -24,13 +24,13 @@
                     @method('put')
                     @csrf
 
-                    <x-input globalAttribute="kode_semester" label="Kode Semester" :defaultValue="$semester->kode_semester" customAttribute="required" />
+                    {{-- <x-input globalAttribute="kode_semester" label="Kode Semester" :defaultValue="$semester->kode_semester" customAttribute="required" /> --}}
 
                     <x-input globalAttribute="nama_semester" label="Nama Semester" :defaultValue="$semester->nama_semester" customAttribute="required" />
 
                     <x-input globalAttribute="nama_tahun_ajar" label="Nama Tahun Ajaran" :defaultValue="$semester->nama_tahun_ajar" customAttribute="required" />
 
-                    <x-input globalAttribute="nama_tahun_pelajaran" label="Nama Tahun Pelajaranan" :defaultValue="$semester->nama_tahun_pelajaran" customAttribute="required" />
+                    {{-- <x-input globalAttribute="nama_tahun_pelajaran" label="Nama Tahun Pelajaranan" :defaultValue="$semester->nama_tahun_pelajaran" customAttribute="required" /> --}}
 
                     <x-input type="number" globalAttribute="semester" :defaultValue="$semester->semester" customAttribute="required" />
                     

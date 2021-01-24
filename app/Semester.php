@@ -7,10 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class Semester extends Model
 {
     protected $fillable = [
-        'kode_semester',
+        // 'kode_semester',
         'nama_semester',
         'nama_tahun_ajar',
-        'nama_tahun_pelajaran',
+        // 'nama_tahun_pelajaran',
         'semester'
     ];
 }

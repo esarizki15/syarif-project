@@ -20,10 +20,10 @@
                 <table class="table table-hover display nowrap" style="width:100%">
                     <thead>
                         <tr>
-                        <th scope="col">Kode Semester</th>
+                        {{-- <th scope="col">Kode Semester</th> --}}
                         <th scope="col">Nama Semester</th>
                         <th scope="col">Nama Tahun Ajar</th>
-                        <th scope="col">Nama Tahun Pelajaran</th>
+                        {{-- <th scope="col">Nama Tahun Pelajaran</th> --}}
                         <th scope="col">Semester</th>
                         <th scope="col">Aksi</th>
                         </tr>
@@ -31,10 +31,10 @@
                     <tbody>
                         @foreach ($semester as $data)
                             <tr>
-                                <td>{{ $data->kode_semester }}</td>
+                                {{-- <td>{{ $data->kode_semester }}</td> --}}
                                 <td>{{ $data->nama_semester }}</td>
                                 <td>{{ $data->nama_tahun_ajar }}</td>
-                                <td>{{ $data->nama_tahun_pelajaran }}</td>
+                                {{-- <td>{{ $data->nama_tahun_pelajaran }}</td> --}}
                                 <td>{{ $data->semester }}</td>
                                 <td>
                                     @include('partial.action', ['data' => $data, 'route'=>'semester'])
