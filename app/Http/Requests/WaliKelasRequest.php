@@ -24,14 +24,15 @@ class WaliKelasRequest extends FormRequest
     public function rules()
     {
         return [
-            'nip' => 'required',
-            'nama' => 'required',
-            'tempat_lahir' => 'required',
-            'tanggal_lahir' => 'required',
+            // 'nip' => 'required',
+            // 'nama' => 'required',
+            'guru_id' => 'required',
+            // 'tempat_lahir' => 'required',
+            // 'tanggal_lahir' => 'required',
             'jenis_kelamin' => 'required',
             'kelas_id' => 'required',
             'email' => 'required',
-            'hp' => 'required',
+            // 'hp' => 'required',
             'jenjang_pendidikan' => 'required',
         ];
     }

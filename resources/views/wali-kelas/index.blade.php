@@ -31,8 +31,8 @@
                     <tbody>
                         @foreach ($waliKelas as $data)
                             <tr>
-                                <td>{{ strtoupper($data->nip) }}</td>
-                                <td>{{ strtoupper($data->nama) }}</td>
+                                <td>{{ strtoupper($data->guru->nip) }}</td>
+                                <td>{{ strtoupper($data->guru->nama) }}</td>
                                 <td>{{ strtoupper($data->jenis_kelamin) }}</td>
                                 <td>{{ strtoupper($data->kelas->name) }}</td>
                                 <td>{{ $data->email }}</td>

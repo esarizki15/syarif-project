@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\WaliKelas;
 use App\Kelas;
+use App\Guru;
 use Illuminate\Http\Request;
 use App\Http\Requests\WaliKelasRequest;
 use Throwable;
@@ -30,7 +31,8 @@ class WaliKelasController extends Controller
     public function create()
     {
         $kelas = Kelas::all();
-        return view('wali-kelas.create', compact('kelas'));
+        $guru = Guru::all();
+        return view('wali-kelas.create', compact('kelas', 'guru'));
     }
 
     /**
@@ -83,7 +85,8 @@ class WaliKelasController extends Controller
     {
         $waliKelas = $waliKela;
         $kelas = Kelas::all();
-        return view('wali-kelas.edit', compact('waliKelas', 'kelas'));
+        $guru = Guru::all();
+        return view('wali-kelas.edit', compact('waliKelas', 'kelas', 'guru'));
     }
 
     /**
