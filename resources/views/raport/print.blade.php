@@ -207,7 +207,7 @@
                                 @php
                                     $jumlah = 0;
                                     if(!empty($dataKehadiran)){
-                                        $jumlah = int($dataKehadiran->sakit) + int($dataKehadiran->izin) + int($dataKehadiran->tanpa_keterangan);   
+                                        $jumlah = intval($dataKehadiran->sakit) + intval($dataKehadiran->izin) + intval($dataKehadiran->tanpa_keterangan);   
                                     } 
                                 @endphp
                                 <td>{{ $jumlah }}</td>
