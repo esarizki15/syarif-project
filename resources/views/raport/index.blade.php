@@ -56,5 +56,14 @@
       </div>
     </div>
 </div>
-@include('partial.dataTable')
+@endsection
+@section('script')
+<script>
+    $(document).ready( function () {
+        $('.table').DataTable({
+            responsive:true,
+            dom: 'Bfrtip',
+        });
+    });
+</script>
 @endsection
