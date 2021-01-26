@@ -126,18 +126,19 @@ class SiswaController extends Controller
                     }
                 }
             }
-            $user = User::updateOrCreate(
-                [
-                'email' => $request->email
-                ],
-                [
-                    'name' => $request->nama,
-                    'role_id' => 2,
-                ]
-            );
             if(!empty($request->password)){
-                $user->password = bcrypt($request->password);
-                $user->update();
+                $user = User::updateOrCreate(
+                    [
+                    'email' => $request->email
+                    ],
+                    [
+                        'name' => $request->nama,
+                        'role_id' => 2,
+                        'password' => bcrypt($request->password),
+                    ]
+                );
+                // $user->password = bcrypt($request->password);
+                // $user->update();
             }
             $success=true;
             $status = 'Siswa Berhasil di Perbarui';
