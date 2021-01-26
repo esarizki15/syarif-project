@@ -264,12 +264,12 @@
                     <div class="row py-2 text-center">
                         <div class="col"><b><u>{{ $nilai->siswa->nama_orang_tua }}</u></b></div>
                         <div class="col"><b><u>
-                            {{ !empty($walikelas) ? $walikelas->nama . ", " . $walikelas->jenjang_pendidikan : '......................................' }}
+                            {{ !empty($walikelas) ? $walikelas->guru->nama . ", " . $walikelas->guru->jenjang_pendidikan : '......................................' }}
                         </u></b></div>
                     </div>
                     <div class="row text-center">
                         <div class="col"></div>
-                        <div class="col">NIP : {{ !empty($walikelas) ? $walikelas->nip : '......................................' }}</div>
+                        <div class="col">NIP : {{ !empty($walikelas) ? $walikelas->guru->nip : '......................................' }}</div>
                     </div>
                 </div>
             </div>

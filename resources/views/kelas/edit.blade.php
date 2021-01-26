@@ -23,7 +23,7 @@
                 <form method="POST" action="{{ route('kelas.update', $kelas->id) }}">
                     @method('PUT')
                     @csrf
-                    <x-input globalAttribute="kode" :defaultValue="$kelas->kode" customAttribute="required" />
+                    {{-- <x-input globalAttribute="kode" :defaultValue="$kelas->kode" customAttribute="required" /> --}}
                     
                     <x-input globalAttribute="name" :defaultValue="$kelas->name" customAttribute="required" />
                     

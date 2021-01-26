@@ -60,7 +60,7 @@ class UserSeeder extends Seeder
         $mapel1->save();
         
         $mapel = new Kelas();
-        $mapel->kode = "001";
+        // $mapel->kode = "001";
         $mapel->name = "X IPA";
         $mapel->save();
         

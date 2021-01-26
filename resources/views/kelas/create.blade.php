@@ -22,7 +22,7 @@
                 @endif
                 <form method="POST" action="{{ route('kelas.store') }}">
                     @csrf
-                    <x-input globalAttribute="kode" :defaultValue="old('kode')" customAttribute="required" />
+                    {{-- <x-input globalAttribute="kode" :defaultValue="old('kode')" customAttribute="required" /> --}}
                     
                     <x-input globalAttribute="name" :defaultValue="old('name')" customAttribute="required" />
                     

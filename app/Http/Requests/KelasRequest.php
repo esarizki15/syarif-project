@@ -24,7 +24,7 @@ class KelasRequest extends FormRequest
     public function rules()
     {
         return [
-            'kode',
+            // 'kode',
             'name'
         ];
     }
