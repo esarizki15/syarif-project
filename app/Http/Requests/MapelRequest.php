@@ -24,7 +24,7 @@ class MapelRequest extends FormRequest
     public function rules()
     {
         return [
-            'kode' => 'required',
+            // 'kode' => 'required',
             'name' => 'required',
         ];
     }

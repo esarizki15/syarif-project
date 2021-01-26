@@ -15,7 +15,7 @@ class CreateMapelsTable extends Migration
     {
         Schema::create('mapels', function (Blueprint $table) {
             $table->id();
-            $table->string('kode');
+            // $table->string('kode');
             $table->string('name');
             $table->timestamps();
         });

@@ -23,7 +23,7 @@
                 <form method="POST" action="{{ route('mapel.update', $mapel->id) }}">
                     @method('PUT')
                     @csrf
-                    <x-input globalAttribute="kode" :defaultValue="$mapel->kode" customAttribute="required" />
+                    {{-- <x-input globalAttribute="kode" :defaultValue="$mapel->kode" customAttribute="required" /> --}}
                     
                     <x-input globalAttribute="name" :defaultValue="$mapel->name" customAttribute="required" />
                     

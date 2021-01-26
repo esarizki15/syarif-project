@@ -20,7 +20,7 @@
                 <table class="table table-hover display nowrap" style="width:100%">
                     <thead>
                         <tr>
-                            <th scope="col">Kode</th>
+                            {{-- <th scope="col">Kode</th> --}}
                             <th scope="col">Nama</th>
                             <th scope="col">Aksi</th>
                         </tr>
@@ -28,7 +28,7 @@
                     <tbody>
                         @foreach ($mapel as $data)
                             <tr>
-                                <td>{{ ucwords($data->kode) }}</td>
+                                {{-- <td>{{ ucwords($data->kode) }}</td> --}}
                                 <td>{{ ucwords($data->name) }}</td>
                                 <td>
                                     @include('partial.action', ['data' => $data, 'route'=>'mapel'])
@@ -42,5 +42,14 @@
       </div>
     </div>
 </div>
-@include('partial.dataTable')
+@endsection
+@section('script')
+<script>
+    $(document).ready( function () {
+        $('.table').DataTable({
+            responsive:true,
+            dom: 'Bfrtip',
+        });
+    });
+</script>
 @endsection

@@ -50,12 +50,12 @@ class UserSeeder extends Seeder
         $ekskul1->save();
 
         $mapel = new Mapel();
-        $mapel->kode = "001";
+        // $mapel->kode = "001";
         $mapel->name = "IPA";
         $mapel->save();
 
         $mapel1 = new Mapel();
-        $mapel1->kode = "002";
+        // $mapel1->kode = "002";
         $mapel1->name = "IPS";
         $mapel1->save();
         
