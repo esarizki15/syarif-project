@@ -20,7 +20,7 @@ class CreateSiswasTable extends Migration
             $table->string('tempat_lahir')->nullable();
             $table->string('tanggal_lahir')->nullable();
             $table->string('nama_orang_tua')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email')->nullable()->unique();
             $table->string('jenis_kelamin')->nullable();
             $table->foreignId('kelas_id')->nullable();
             $table->foreignId('ekskul_id')->nullable();

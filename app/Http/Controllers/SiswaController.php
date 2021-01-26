@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\SiswaRequest;
 use Throwable;
 use File;
+use App\User;
 class SiswaController extends Controller
 {
     /**
@@ -53,6 +54,18 @@ class SiswaController extends Controller
                 $uploaded_image->move($destinationPath, $filename);
                 $data->foto = $filename;
                 $data->save();
+            }
+                if($data){
+                    $user = User::updateOrCreate(
+                        [
+                        'email' => $request->email
+                        ],
+                        [
+                            'name' => $request->nama,
+                            'role_id' => 2,
+                            'password' => bcrypt($request->password),
+                        ]
+                );
             }
             $success=true;
             $status = 'Siswa Berhasil di Buat';
@@ -113,6 +126,19 @@ class SiswaController extends Controller
                     }
                 }
             }
+            $user = User::updateOrCreate(
+                [
+                'email' => $request->email
+                ],
+                [
+                    'name' => $request->nama,
+                    'role_id' => 2,
+                ]
+            );
+            if(!empty($request->password)){
+                $user->password = bcrypt($request->password);
+                $user->update();
+            }
             $success=true;
             $status = 'Siswa Berhasil di Perbarui';
         }catch(Throwable $e){
@@ -131,7 +157,10 @@ class SiswaController extends Controller
     public function destroy(Siswa $siswa)
     {
         try{
-            $siswa->delete();
+            $user = User::where('email', $siswa->email)->first();
+            if($siswa->delete()){
+                $user->delete();
+            }
             $success=true;
             $status = 'Siswa Berhasil di Hapus';
         }catch(Throwable $e){

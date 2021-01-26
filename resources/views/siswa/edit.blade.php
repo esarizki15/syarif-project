@@ -36,6 +36,8 @@
                             <x-input globalAttribute="nama_orang_tua" label="Nama Orang Tua" :defaultValue="$siswa->nama_orang_tua" customAttribute="required" isStack="{{ true }}" />
                             
                             <x-input globalAttribute="email" type="email" :defaultValue="$siswa->email" customAttribute="required" isStack="{{ true }}" />
+
+                            <x-input globalAttribute="password" type="password" :defaultValue="old('password')" isStack="{{ true }}" />
                         </div>
                         <div class="col col-md-6 px-3">
                             <x-select globalAttribute="jenis_kelamin" :isStack="true" label="Jenis Kelamin" customAttribute="required">
