@@ -25,7 +25,7 @@ class NilaiController extends Controller
     {
         $nilai = Nilai::all();
         if(Auth::user()->role_id == 2){
-            $nilai = Nilai::where('siswa_id', Auth::user()->id)->get()->unique('semester_id');
+            $nilai = Nilai::where('siswa_id', Auth::user()->id)->get();
         }
         return view('nilai.index', compact('nilai'));
     }

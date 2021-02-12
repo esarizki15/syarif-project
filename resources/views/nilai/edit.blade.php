@@ -26,7 +26,7 @@
                     
                     <x-select globalAttribute="siswa_id" label="Siswa" customAttribute="required">
                         @foreach ($siswa as $data)
-                            <option value="{{ $data->id }}" @if($nilai->siswa_id == $data->id) selected @endif>{{ $data->nama }}</option>
+                            <option value="{{ $data->id }}" @if($nilai->siswa_id == $data->id) selected @endif>{{ $data->name }}</option>
                         @endforeach
                     </x-select>
                     
