@@ -24,9 +24,9 @@ class NilaiController extends Controller
     public function index()
     {
         $nilai = Nilai::all();
-        if(Auth::user()->role_id == 2){
-            $nilai = Nilai::where('siswa_id', Auth::user()->id)->get();
-        }
+        // if(Auth::user()->role_id == 2){
+        //     $nilai = Nilai::where('siswa_id', Auth::user()->id)->get();
+        // }
         return view('nilai.index', compact('nilai'));
     }
 
@@ -39,7 +39,8 @@ class NilaiController extends Controller
     {
         $semester = Semester::all();
         $mapel = Mapel::all();
-        $siswa = User::where('role_id', 2)->get();
+        // $siswa = User::where('role_id', 2)->get();
+        $siswa = Siswa::all();
         $kelas = Kelas::all();
         return view('nilai.create', compact('semester', 'mapel', 'kelas', 'siswa'));
     }
@@ -111,7 +112,8 @@ class NilaiController extends Controller
     {
         $semester = Semester::all();
         $mapel = Mapel::all();
-        $siswa = User::where('role_id', 2)->get();
+        // $siswa = User::where('role_id', 2)->get();
+        $siswa = Siswa::all();
         $kelas = Kelas::all();
         return view('nilai.edit', compact('nilai', 'semester', 'mapel', 'kelas', 'siswa'));
     }

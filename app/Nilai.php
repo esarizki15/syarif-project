@@ -79,8 +79,9 @@ class Nilai extends Model
 
     public function siswa()
     {
-        $user = User::find($this->siswa_id);
-        $siswa = Siswa::where('email', $user->email)->first(); 
-        return $siswa;
+        return $this->belongsTo('App\Siswa');
+        // $user = User::find($this->siswa_id);
+        // $siswa = Siswa::where('email', $user->email)->first(); 
+        // return $siswa;
     }
 }

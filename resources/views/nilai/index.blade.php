@@ -43,8 +43,8 @@
                         @foreach ($nilai as $data)
                             <tr>
                                 <td>{{ $loop->iteration }}</td>
-                                <td>{{ $data->siswa()->nis }}</td>
-                                <td>{{ $data->siswa()->nama }}</td>
+                                <td>{{ $data->siswa->nis }}</td>
+                                <td>{{ $data->siswa->nama }}</td>
                                 <td>{{ ucwords($data->mapel->name) }}</td>
                                 <td>{{ ucwords($data->semester->nama_semester) }}</td>
                                 @php
