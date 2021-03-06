@@ -51,7 +51,7 @@
                                     $guru = App\Guru::where('mapel_id', $data->mapel_id)->first();     
                                 @endphp
                                 <td>{{ !empty($guru) ? $guru->nama : 'Data guru belum ada' }}</td>
-                                <td>{{ $data->kelas->name }}</td>
+                                <td>{{ strtoupper($data->kelas->name) }}</td>
                                 <td>{{ $data->tugas }}</td>
                                 <td>{{ $data->uts }}</td>
                                 <td>{{ $data->uas }}</td>
