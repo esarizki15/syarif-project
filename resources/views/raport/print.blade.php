@@ -24,8 +24,8 @@
           <center>
               <div class="row">
                   <div class="col">
-                      <h3><b>Laporan penilaian hasil belajar siswa semester II (genap)</b></h3>
-                      <h3><b>Tahun pelajaran 2019/2020</b></h3>
+                      <h3><b>Laporan penilaian hasil belajar siswa semester {{ $nilai->semester->semester }} ({{ ucwords(explode(" ", $nilai->semester->nama_semester)[1]) }})</b></h3>
+                      <h3><b>Tahun pelajaran {{ $nilai->semester->nama_tahun_ajar }}</b></h3>
                   </div>
               </div>
           </center>
